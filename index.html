@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RYRA & CO. — Catalogs</title>
+    <title>RYRA &amp; CO. — Product Catalogs</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -13,44 +13,170 @@
             padding: 0;
             line-height: 1.5;
         }
-        .page { max-width: 800px; margin: 0 auto; padding: 40px 32px; }
+        .page { max-width: 780px; margin: 0 auto; padding: 44px 32px 48px; }
         h1 { font-size: 1.75rem; margin-bottom: 4px; }
-        .sub { font-size: 0.88rem; color: #604622; margin-bottom: 28px; }
-        .card {
-            background: #fdf2de; border: 1px solid #c9b896; border-radius: 10px;
-            padding: 20px; margin-bottom: 16px;
+        .sub { font-size: 0.88rem; color: #604622; margin-bottom: 32px; }
+
+        .brand-section {
+            background: #fdf2de;
+            border: 1px solid #c9b896;
+            border-radius: 10px;
+            padding: 24px 24px 20px;
+            margin-bottom: 18px;
         }
-        .card h2 { font-size: 1rem; margin-bottom: 8px; }
-        .card a { display: inline-block; margin-right: 12px; color: #2f2115; text-decoration: none; font-size: 0.9rem; }
-        .card a:hover { text-decoration: underline; }
-        .note { font-size: 0.82rem; color: #604622; margin-top: 6px; }
-        .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1.5px solid #d5ac55; }
-        .brand-icon { width: 20px; height: 20px; border: 2px solid #d5ac55; border-radius: 50%; position: relative; }
-        .brand-icon::after { content: ""; position: absolute; top: 50%; left: 50%; width: 7px; height: 7px; background: #d5ac55; border-radius: 50%; transform: translate(-50%, -50%); }
-        .brand-name { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; }
+        .brand-section:last-child { margin-bottom: 0; }
+
+        .brand-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding-bottom: 14px;
+            border-bottom: 1.5px solid #d5ac55;
+        }
+        .brand-mark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border: 2px solid #d5ac55;
+            border-radius: 50%;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .brand-mark::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 14px;
+            height: 14px;
+            background: #d5ac55;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .brand-title {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #2f2115;
+        }
+        .brand-sub {
+            font-size: 0.78rem;
+            color: #604622;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .catalog-links { display: flex; flex-wrap: wrap; gap: 10px 18px; }
+        .catalog-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            border: 1px solid #c9b896;
+            border-radius: 6px;
+            padding: 9px 15px;
+            color: #2f2115;
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: background 0.15s, border-color 0.15s;
+        }
+        .catalog-links a:hover {
+            background: #f5ecd9;
+            border-color: #b8a07a;
+        }
+        .catalog-links .link-icon {
+            width: 16px;
+            height: 16px;
+            border: 1.5px solid #c9b896;
+            border-radius: 50%;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .catalog-links .link-icon::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            background: #c9b896;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .catalog-links .link-label {
+            text-transform: capitalize;
+        }
+
+        .section-note {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid #d5ac55;
+            font-size: 0.76rem;
+            color: #8a6e4e;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .page { padding: 28px 18px 36px; }
+            .brand-section { padding: 18px 16px 16px; }
+            .brand-row { gap: 10px; }
+            .brand-mark { width: 36px; height: 36px; }
+            .brand-mark::after { width: 10px; height: 10px; }
+            .catalog-links a { padding: 7px 12px; font-size: 0.82rem; }
+        }
     </style>
 </head>
 <body>
     <div class="page">
-        <div class="brand">
-            <span class="brand-icon"></span>
-            <span class="brand-name">RYRA & CO.</span>
-        </div>
         <h1>Product Catalogs</h1>
         <p class="sub">Browse and share our collections.</p>
 
-        <div class="card">
-            <h2>📦 Browse Catalogs</h2>
-            <a href="html_catalogs/catalog_mens_jewelry.html" target="_blank">Men's Jewelry & Accessories</a>
-            <a href="html_catalogs/catalog_womens_jewelry.html" target="_blank">Women's Jewelry & Accessories</a>
-            <a href="html_catalogs/catalog_womens_clutches.html" target="_blank">Women's Clutches</a>
-            <a href="html_catalogs/catalog_mens_accessories.html" target="_blank">Men's Accessories</a>
+        <div class="brand-section">
+            <div class="brand-row">
+                <div class="brand-mark"></div>
+                <div>
+                    <div class="brand-title">RSTREET</div>
+                    <div class="brand-sub">Men's Collections</div>
+                </div>
+            </div>
+            <div class="catalog-links">
+                <a href="html_catalogs/catalog_mens_jewelry.html">
+                    <span class="link-icon"></span>
+                    <span class="link-label">Men's Jewelry &amp; Accessories</span>
+                </a>
+                <a href="html_catalogs/catalog_mens_accessories.html">
+                    <span class="link-icon"></span>
+                    <span class="link-label">Men's Accessories</span>
+                </a>
+            </div>
+            <div class="section-note">Watches, wallets, necklaces, sunglasses, bracelets, rings &amp; more.</div>
         </div>
 
-        <div class="card">
-            <h2>➕ Add a Product</h2>
-            <a href="catalog_form.html" target="_blank">Open Add Product Form</a>
-            <p class="note">The form runs locally. Start the server: <code>python catalog_server.py</code> then open <code>http://127.0.0.1:5001</code>.</p>
+        <div class="brand-section">
+            <div class="brand-row">
+                <div class="brand-mark"></div>
+                <div>
+                    <div class="brand-title">RYRA &amp; CO.</div>
+                    <div class="brand-sub">Women's Collections</div>
+                </div>
+            </div>
+            <div class="catalog-links">
+                <a href="html_catalogs/catalog_womens_jewelry.html">
+                    <span class="link-icon"></span>
+                    <span class="link-label">Women's Jewelry &amp; Accessories</span>
+                </a>
+                <a href="html_catalogs/catalog_womens_clutches.html">
+                    <span class="link-icon"></span>
+                    <span class="link-label">Women's Clutches</span>
+                </a>
+            </div>
+            <div class="section-note">Earrings, necklaces, bracelets, rings, bags &amp; evening clutches.</div>
         </div>
     </div>
 </body>

@@ -247,6 +247,26 @@ def ryra_css():
             letter-spacing: 0.02em;
             white-space: nowrap;
         }}
+        .card-price-oos {{
+            color: {TEXT_SECONDARY};
+            text-decoration: line-through;
+            font-weight: 400;
+        }}
+        .oos-badge {{
+            display: inline-block;
+            margin-top: 5px;
+            padding: 2px 8px;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #fff;
+            background: #c62828;
+            border-radius: 3px;
+        }}
+        .product-card-oos .card-image {{
+            opacity: 0.6;
+        }}
 
         .empty-state {{
             grid-column: 1 / -1;
@@ -344,13 +364,15 @@ def build_one(catalog_name, json_path, output_path):
         else:
             img_tag = '<div class="product-image-placeholder">+</div>'
 
+        oos = bool(p.get("out_of_stock"))
         cards.append(f"""
-        <div class="product-card" data-category="{html.escape(category.lower().replace(' ', '-'))}">
+        <div class="product-card{' product-card-oos' if oos else ''}" data-category="{html.escape(category.lower().replace(' ', '-'))}">
             <div class="card-image">{img_tag}</div>
             <div class="card-body">
                 <div class="card-category">{html.escape(category)}</div>
                 <div class="card-name">{html.escape(name)}</div>
-                <div class="card-price">{html.escape(price)}</div>
+                <div class="card-price{' card-price-oos' if oos else ''}">{html.escape(price)}</div>
+                {f'<div class="oos-badge">Out of Stock</div>' if oos else ''}
             </div>
         </div>
         """)

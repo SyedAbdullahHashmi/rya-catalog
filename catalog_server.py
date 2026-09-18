@@ -80,7 +80,9 @@ def save_uploaded_image(data_url):
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        if self.path in ("/", "/index.html"):
+        if self.path == "/admin" or self.path == "/admin/":
+            self._serve_admin()
+        elif self.path in ("/", "/index.html"):
             self._serve_form()
         elif self.path == "/catalog_form.html":
             self._serve_form()
@@ -102,7 +104,13 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_error(404)
 
     def do_POST(self):
-        if self.path != "/add":
+        if self.path == "/admin/edit":
+            self._admin_edit()
+        elif self.path == "/admin/delete":
+            self._admin_delete()
+        elif self.path == "/admin/toggle-stock":
+            self._admin_toggle_stock()
+        elif self.path != "/add":
             self.send_error(404)
             return
         try:
@@ -209,6 +217,137 @@ class Handler(BaseHTTPRequestHandler):
 
     def log_message(self, format, *args):
         pass  # quiet
+
+    # ---- Admin: list / edit / delete / toggle-stock ----
+
+    def _serve_admin(self):
+        adm_path = os.path.join(BASE_DIR, "admin.html")
+        if not os.path.isfile(adm_path):
+            self.send_error(404, "admin.html not found")
+            return
+        with open(adm_path, "rb") as f:
+            html = f.read()
+        self.send_response(200)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.end_headers()
+        self.wfile.write(html)
+
+    def _admin_list_catalogs(self):
+        out = []
+        for key, path in CATALOGS.items():
+            cat = read_catalog(path)
+            out.append({
+                "key": key,
+                "name": cat.get("name", key.replace("_", " ").title()),
+                "products": [
+                    {
+                        "name": p.get("name", ""),
+                        "sku": p.get("sku", ""),
+                        "description": p.get("description", ""),
+                        "price": p.get("price", ""),
+                        "image": p.get("image", ""),
+                        "category": p.get("category", ""),
+                        "out_of_stock": bool(p.get("out_of_stock")),
+                    }
+                    for p in cat.get("products", [])
+                ],
+            })
+        return out
+
+    def _admin_edit(self):
+        try:
+            data = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))))
+        except Exception:
+            self.send_json({"error": "Invalid JSON"}, 400)
+            return
+        catalog_key = (data.get("catalog") or "").strip()
+        if catalog_key not in CATALOGS:
+            self.send_json({"error": "Unknown catalog"}, 400)
+            return
+        try:
+            idx = int(data.get("idx"))
+        except (TypeError, ValueError):
+            self.send_json({"error": "Invalid idx"}, 400)
+            return
+        cat = read_catalog(CATALOGS[catalog_key])
+        products = cat.get("products", [])
+        if idx < 0 or idx >= len(products):
+            self.send_json({"error": "Product index out of range"}, 400)
+            return
+        p = products[idx]
+        p["name"] = (data.get("name") or "").strip()
+        p["price"] = (data.get("price") or "").strip()
+        p["description"] = (data.get("description") or "").strip()
+        p["category"] = (data.get("category") or "Other").strip() or "Other"
+        # SKU is not editable from admin (preserve original)
+        write_catalog(CATALOGS[catalog_key], cat)
+        try:
+            _auto_publish(catalog_key)
+        except Exception as e:
+            sys.stderr.write(f"admin-edit auto-publish failed: {e}\n")
+        self.send_json({"ok": True, "name": p["name"]})
+
+    def _admin_delete(self):
+        try:
+            data = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))))
+        except Exception:
+            self.send_json({"error": "Invalid JSON"}, 400)
+            return
+        catalog_key = (data.get("catalog") or "").strip()
+        if catalog_key not in CATALOGS:
+            self.send_json({"error": "Unknown catalog"}, 400)
+            return
+        try:
+            idx = int(data.get("idx"))
+        except (TypeError, ValueError):
+            self.send_json({"error": "Invalid idx"}, 400)
+            return
+        cat = read_catalog(CATALOGS[catalog_key])
+        products = cat.get("products", [])
+        if idx < 0 or idx >= len(products):
+            self.send_json({"error": "Product index out of range"}, 400)
+            return
+        name = products[idx].get("name", "(unknown)")
+        del products[idx]
+        write_catalog(CATALOGS[catalog_key], cat)
+        try:
+            _auto_publish(catalog_key)
+        except Exception as e:
+            sys.stderr.write(f"admin-delete auto-publish failed: {e}\n")
+        self.send_json({"ok": True, "name": name})
+
+    def _admin_toggle_stock(self):
+        try:
+            data = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))))
+        except Exception:
+            self.send_json({"error": "Invalid JSON"}, 400)
+            return
+        catalog_key = (data.get("catalog") or "").strip()
+        if catalog_key not in CATALOGS:
+            self.send_json({"error": "Unknown catalog"}, 400)
+            return
+        try:
+            idx = int(data.get("idx"))
+        except (TypeError, ValueError):
+            self.send_json({"error": "Invalid idx"}, 400)
+            return
+        cat = read_catalog(CATALOGS[catalog_key])
+        products = cat.get("products", [])
+        if idx < 0 or idx >= len(products):
+            self.send_json({"error": "Product index out of range"}, 400)
+            return
+        p = products[idx]
+        p["out_of_stock"] = not bool(p.get("out_of_stock"))
+        write_catalog(CATALOGS[catalog_key], cat)
+        try:
+            _auto_publish(catalog_key)
+        except Exception as e:
+            sys.stderr.write(f"admin-toggle-stock auto-publish failed: {e}\n")
+        self.send_json({
+            "ok": True,
+            "name": p.get("name", ""),
+            "out_of_stock": p["out_of_stock"],
+        })
 
 
 def main():

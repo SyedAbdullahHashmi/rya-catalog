@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Catalog Admin — RYRA & CO.</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #111111;
+            background: #f6f7f8;
+            padding: 28px 16px 60px;
+            line-height: 1.45;
+        }
+        .wrap { max-width: 820px; margin: 0 auto; }
+        .header { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+        .brand-dot { width: 10px; height: 10px; border-radius: 50%; background: #111111; flex-shrink: 0; }
+        h1 { font-size: 1.35rem; font-weight: 700; letter-spacing: -0.01em; }
+        .sub { font-size: 0.85rem; color: #666; margin-bottom: 24px; }
+
+        .catalog-section { margin-bottom: 32px; }
+        .catalog-head {
+            display: flex; align-items: baseline; justify-content: space-between;
+            margin-bottom: 10px; padding-bottom: 6px;
+            border-bottom: 1.5px solid #d4d4d4;
+        }
+        .catalog-head h2 { font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #333; }
+        .catalog-head .count { font-size: 0.78rem; color: #888; }
+
+        table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; font-size: 0.85rem; }
+        th { text-align: left; padding: 8px 10px; background: #fafafa; font-weight: 600; font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: #777; border-bottom: 1px solid #e0e0e0; }
+        td { padding: 8px 10px; border-bottom: 1px solid #eee; vertical-align: middle; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f9fafb; }
+        .product-name { font-weight: 500; }
+        .product-sku { color: #888; font-size: 0.78rem; font-family: "SF Mono", Menlo, monospace; }
+        .product-price { font-weight: 600; white-space: nowrap; }
+        .product-desc { color: #666; font-size: 0.8rem; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .product-cat { color: #888; font-size: 0.78rem; }
+        .stock-badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.03em; }
+        .stock-in { background: #e6f7e6; color: #2e7d32; }
+        .stock-out { background: #fff0e0; color: #c62828; }
+
+        .actions { white-space: nowrap; }
+        .btn {
+            display: inline-flex; align-items: center; gap: 4px;
+            font-family: inherit; font-size: 0.78rem; font-weight: 600;
+            padding: 5px 10px; border: 1px solid #ccc; border-radius: 5px;
+            background: #fff; color: #333; cursor: pointer; transition: background 0.15s;
+        }
+        .btn:hover { background: #f0f0f0; }
+        .btn-del { color: #c62828; border-color: #e8b4b4; }
+        .btn-del:hover { background: #fef2f2; }
+        .btn-stock { color: #2e7d32; border-color: #b8d9b8; }
+        .btn-stock.stock-out-btn { color: #c62828; border-color: #e8b4b4; }
+        .btn-edit { color: #1565c0; border-color: #b3d4f0; }
+        .btn-edit:hover { background: #e8f2fe; }
+        .btn-save { background: #111; color: #fff; border-color: #111; }
+        .btn-save:hover { background: #333; }
+        .btn-cancel { background: #fff; color: #666; border-color: #ccc; }
+        .btn-cancel:hover { background: #f0f0f0; }
+        .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .edit-row td { background: #f8f9fb; }
+        .edit-row input {
+            width: 100%; padding: 5px 7px; font-size: 0.82rem;
+            border: 1px solid #bbb; border-radius: 4px; background: #fff; font-family: inherit;
+        }
+        .edit-row input:focus { outline: none; border-color: #111; box-shadow: 0 0 0 2px #e8e8e8; }
+        .edit-row .product-sku { pointer-events: none; }
+
+        .status-bar {
+            margin-top: 20px; padding: 12px 16px; border-radius: 6px;
+            font-size: 0.85rem; display: none; align-items: center; gap: 8px;
+        }
+        .status-bar.ok { display: flex; background: #f3f4f4; color: #111; border: 1px solid #d1d5db; }
+        .status-bar.err { display: flex; background: #fef2f2; color: #111; border: 1px solid #e8b4b4; }
+        .status-bar .spinner { width: 14px; height: 14px; border: 2px solid #ccc; border-top-color: #111; border-radius: 50%; animation: spin 0.7s linear infinite; flex-shrink: 0; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hint { font-size: 0.76rem; color: #999; margin-top: 14px; }
+        .hint a { color: #666; text-decoration: underline; }
+
+        .delete-confirm {
+            display: none; margin-top: 8px; padding: 6px 10px;
+            background: #fef2f2; border: 1px solid #e8b4b4; border-radius: 5px;
+            font-size: 0.78rem; color: #c62828; align-items: center; gap: 8px;
+        }
+        .delete-confirm.show { display: flex; }
+        .delete-confirm .btn { font-size: 0.72rem; padding: 3px 8px; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <span class="brand-dot"></span>
+            <h1>Catalog Admin</h1>
+        </div>
+        <p class="sub">Edit, delete, or mark products out of stock. Changes publish to GitHub automatically.</p>
+
+        <div id="status" class="status-bar"></div>
+
+        <div id="admin-body">
+            <p class="hint">Loading catalogs…</p>
+        </div>
+
+        <p class="hint">Server must be running: <code style="background:#e5e7eb;padding:1px 5px;border-radius:3px;">python catalog_server.py</code> then open <a href="http://127.0.0.1:5001/admin" target="_blank" style="color:#666;text-decoration:underline;">http://127.0.0.1:5001/admin</a></p>
+    </div>
+
+    <script>
+    (function () {
+        const statusEl = document.getElementById('status');
+        const bodyEl = document.getElementById('admin-body');
+
+        function showStatus(msg, type, spinner) {
+            statusEl.className = 'status-bar ' + (type || '');
+            statusEl.innerHTML = (spinner ? '<span class="spinner"></span>' : '') + '<span>' + msg + '</span>';
+        }
+        function hideStatus() { statusEl.className = 'status-bar'; statusEl.innerHTML = ''; }
+
+        function showDeleteConfirm(rowEl, doDelete) {
+            let bar = rowEl.querySelector('.delete-confirm');
+            if (!bar) {
+                bar = document.createElement('div');
+                bar.className = 'delete-confirm';
+                bar.innerHTML = '<span>Delete this product?</span>' +
+                    '<button class="btn btn-del" data-confirm>Yes, delete</button>' +
+                    '<button class="btn btn-cancel" data-cancel>Cancel</button>';
+                rowEl.appendChild(bar);
+                bar.querySelector('[data-confirm]').addEventListener('click', () => {
+                    bar.classList.remove('show');
+                    doDelete();
+                });
+                bar.querySelector('[data-cancel]').addEventListener('click', () => bar.classList.remove('show'));
+            }
+            bar.classList.toggle('show');
+        }
+
+        async function loadCatalogs() {
+            try {
+                const res = await fetch('/admin');
+                if (!res.ok) throw new Error('Server returned ' + res.status);
+                const data = await res.json();
+                render(data);
+            } catch (err) {
+                bodyEl.innerHTML = '<p style="color:#c62828;">Could not load catalogs. Is the server running?<br><small>' + err.message + '</small></p>';
+            }
+        }
+
+        function render(catalogs) {
+            let html = '';
+            for (const cat of catalogs) {
+                if (!cat.products || cat.products.length === 0) continue;
+                html += '<div class="catalog-section">';
+                html += '<div class="catalog-head"><h2>' + esc(cat.name) + '</h2>' +
+                    '<span class="count">' + cat.products.length + ' product' + (cat.products.length !== 1 ? 's' : '') + '</span></div>';
+                html += '<table><thead><tr>' +
+                    '<th style="width:28%;">Name</th>' +
+                    '<th style="width:9%;">SKU</th>' +
+                    '<th style="width:14%;">Price</th>' +
+                    '<th style="width:24%;">Description</th>' +
+                    '<th style="width:9%;">Category</th>' +
+                    '<th style="width:8%;">Stock</th>' +
+                    '<th style="width:8%;text-align:right;">Actions</th>' +
+                    '</tr></thead><tbody>';
+                for (let i = 0; i < cat.products.length; i++) {
+                    const p = cat.products[i];
+                    const oos = !!p.out_of_stock;
+                    html += '<tr data-catalog="' + esc(cat.key) + '" data-idx="' + i + '">' +
+                        '<td class="product-name">' + esc(p.name) + '</td>' +
+                        '<td class="product-sku">' + esc(p.sku) + '</td>' +
+                        '<td class="product-price">' + esc(p.price) + '</td>' +
+                        '<td class="product-desc" title="' + esc(p.description) + '">' + esc(p.description) + '</td>' +
+                        '<td class="product-cat">' + esc(p.category || 'Other') + '</td>' +
+                        '<td><span class="stock-badge ' + (oos ? 'stock-out' : 'stock-in') + '">' + (oos ? 'OUT OF STOCK' : 'In Stock') + '</span></td>' +
+                        '<td class="actions" style="text-align:right;">' +
+                        '<button class="btn btn-edit" data-edit>Edit</button> ' +
+                        '<button class="btn btn-del" data-delete>Delete</button> ' +
+                        '<button class="btn ' + (oos ? 'btn-stock stock-out-btn' : 'btn-stock') + '" data-stock>' + (oos ? 'Unflag' : 'OOS') + '</button>' +
+                        '</td></tr>';
+                }
+                html += '</tbody></table></div>';
+            }
+            if (!html) {
+                html = '<p style="color:#999;text-align:center;padding:40px 0;">No catalogs found. Add a product first.</p>';
+            }
+            bodyEl.innerHTML = html;
+
+            // Wire up actions
+            bodyEl.querySelectorAll('[data-edit]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const tr = e.currentTarget.closest('tr');
+                    enterEditMode(tr);
+                });
+            });
+            bodyEl.querySelectorAll('[data-delete]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const tr = e.currentTarget.closest('tr');
+                    showDeleteConfirm(tr, () => confirmDelete(tr));
+                });
+            });
+            bodyEl.querySelectorAll('[data-stock]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const tr = e.currentTarget.closest('tr');
+                    toggleStock(tr);
+                });
+            });
+        }
+
+        function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])); }
+
+        function enterEditMode(tr) {
+            if (tr.classList.contains('edit-row')) return; // already editing
+            const catalog = tr.dataset.catalog;
+            const idx = parseInt(tr.dataset.idx, 10);
+
+            // Build edit form
+            const cells = tr.querySelectorAll('td');
+            const name = cells[0].textContent.trim();
+            const sku = cells[1].textContent.trim();
+            const price = cells[2].textContent.trim();
+            const desc = cells[3].textContent.trim();
+            const cat = cells[4].textContent.trim();
+
+            tr.classList.add('edit-row');
+            tr.innerHTML =
+                '<td><input name="name" value="' + esc(name) + '"></td>' +
+                '<td class="product-sku">' + esc(sku) + '</td>' +
+                '<td><input name="price" value="' + esc(price) + '"></td>' +
+                '<td><input name="description" value="' + esc(desc) + '"></td>' +
+                '<td><select name="category">' + catOptions(cat) + '</select></td>' +
+                '<td><span class="stock-badge ' + (pOOS(tr) ? 'stock-out' : 'stock-in') + '">' + (pOOS(tr) ? 'OUT OF STOCK' : 'In Stock') + '</span></td>' +
+                '<td class="actions" style="text-align:right;">' +
+                '<button class="btn btn-save" data-save>Save</button> ' +
+                '<button class="btn btn-cancel" data-cancel>Cancel</button></td>';
+
+            tr.querySelector('[data-save]').addEventListener('click', () => saveEdit(tr, catalog, idx));
+            tr.querySelector('[data-cancel]').addEventListener('click', cancelEdit);
+            // Enter key saves
+            tr.querySelectorAll('input, select').forEach(el => {
+                el.addEventListener('keydown', (e) => { if (e.key === 'Enter') e.preventDefault(), saveEdit(tr, catalog, idx); });
+            });
+            tr.querySelector('input[name="name"]').focus();
+        }
+
+        function catOptions(selected) {
+            const cats = ['', 'Earrings','Necklaces','Bracelets','Rings','Bags & Clutches','Watches','Wallets','Keychains','Sunglasses','Other'];
+            return cats.map(c => '<option value="' + esc(c) + '"' + (c === selected ? ' selected' : '') + '>' + esc(c || '— Select —') + '</option>').join('');
+        }
+
+        function pOOS(tr) {
+            // peek at original row data via dataset
+            return !!tr.dataset.oos;
+        }
+
+        function cancelEdit(tr) {
+            loadCatalogs(); // re-render to reset
+        }
+
+        async function saveEdit(tr, catalog, idx) {
+            const inputs = tr.querySelectorAll('input, select');
+            const name = inputs[0].value.trim();
+            const price = inputs[1].value.trim();
+            const desc = inputs[2].value.trim();
+            const category = inputs[3].value.trim() || 'Other';
+
+            if (!name) { showStatus('Product name is required.', 'err'); return; }
+            if (!price) { showStatus('Price is required.', 'err'); return; }
+
+            showStatus('Saving…', 'ok', true);
+            const oos = tr.dataset.oos === 'true';
+
+            try {
+                const res = await fetch('/admin/edit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ catalog, idx, name, sku: skuFromTr(tr), price, description: desc, category, out_of_stock: oos })
+                });
+                const j = await res.json();
+                if (!res.ok) throw new Error(j.error || 'Save failed');
+                showStatus('Saved: ' + j.name + ' — publishing to GitHub…', 'ok');
+                hideStatus();
+                setTimeout(loadCatalogs, 1200);
+            } catch (err) {
+                showStatus('Error: ' + err.message, 'err');
+            }
+        }
+
+        function skuFromTr(tr) {
+            // sku is in a non-editable td; re-read from original innerText
+            return tr.querySelector('td.product-sku')?.textContent.trim() || '';
+        }
+
+        async function confirmDelete(tr) {
+            const catalog = tr.dataset.catalog;
+            const idx = parseInt(tr.dataset.idx, 10);
+            const name = tr.querySelector('.product-name')?.textContent.trim() || '(unknown)';
+
+            showStatus('Deleting ' + name + '…', 'ok', true);
+            try {
+                const res = await fetch('/admin/delete', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ catalog, idx })
+                });
+                const j = await res.json();
+                if (!res.ok) throw new Error(j.error || 'Delete failed');
+                showStatus('Deleted: ' + name + ' — publishing to GitHub…', 'ok');
+                hideStatus();
+                setTimeout(loadCatalogs, 1200);
+            } catch (err) {
+                showStatus('Error: ' + err.message, 'err');
+            }
+        }
+
+        async function toggleStock(tr) {
+            const catalog = tr.dataset.catalog;
+            const idx = parseInt(tr.dataset.idx, 10);
+            const name = tr.querySelector('.product-name')?.textContent.trim() || '(unknown)';
+            const currentlyOOS = tr.dataset.oos === 'true';
+
+            showStatus((currentlyOOS ? 'Unflagging' : 'Marking out of stock') + ' ' + name + '…', 'ok', true);
+            try {
+                const res = await fetch('/admin/toggle-stock', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ catalog, idx })
+                });
+                const j = await res.json();
+                if (!res.ok) throw new Error(j.error || 'Toggle failed');
+                showStatus((currentlyOOS ? 'Back in stock' : 'Marked out of stock') + ' — publishing to GitHub…', 'ok');
+                hideStatus();
+                setTimeout(loadCatalogs, 1200);
+            } catch (err) {
+                showStatus('Error: ' + err.message, 'err');
+            }
+        }
+
+        // Store OOS state on tr dataset for edit mode
+        document.addEventListener('click', (e) => {
+            const tr = e.target.closest('tr[data-catalog]');
+            if (!tr) return;
+            // populate dataset.oos from the stock badge text
+            const badge = tr.querySelector('.stock-badge');
+            if (badge) tr.dataset.oos = badge.classList.contains('stock-out') ? 'true' : 'false';
+        });
+
+        loadCatalogs();
+        // Refresh every 30s to catch auto-publish updates (if page left open)
+        setInterval(loadCatalogs, 30000);
+    })();
+    </script>
+</body>
+</html>
