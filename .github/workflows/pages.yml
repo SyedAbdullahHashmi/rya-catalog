@@ -27,10 +27,16 @@ jobs:
       - name: Build catalogs
         run: python build_catalogs.py
 
+      - name: Prepare deploy directory
+        run: |
+          mkdir -p deploy
+          cp index.html catalog_form.html deploy/
+          cp -r html_catalogs deploy/
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: html_catalogs
+          path: deploy
 
   deploy:
     needs: build

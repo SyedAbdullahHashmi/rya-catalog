@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RYRA & CO. — Catalogs</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #2f2115;
+            background: #edd3a8;
+            padding: 0;
+            line-height: 1.5;
+        }
+        .page { max-width: 800px; margin: 0 auto; padding: 40px 32px; }
+        h1 { font-size: 1.75rem; margin-bottom: 4px; }
+        .sub { font-size: 0.88rem; color: #604622; margin-bottom: 28px; }
+        .card {
+            background: #fdf2de; border: 1px solid #c9b896; border-radius: 10px;
+            padding: 20px; margin-bottom: 16px;
+        }
+        .card h2 { font-size: 1rem; margin-bottom: 8px; }
+        .card a { display: inline-block; margin-right: 12px; color: #2f2115; text-decoration: none; font-size: 0.9rem; }
+        .card a:hover { text-decoration: underline; }
+        .note { font-size: 0.82rem; color: #604622; margin-top: 6px; }
+        .brand { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1.5px solid #d5ac55; }
+        .brand-icon { width: 20px; height: 20px; border: 2px solid #d5ac55; border-radius: 50%; position: relative; }
+        .brand-icon::after { content: ""; position: absolute; top: 50%; left: 50%; width: 7px; height: 7px; background: #d5ac55; border-radius: 50%; transform: translate(-50%, -50%); }
+        .brand-name { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.25em; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="brand">
+            <span class="brand-icon"></span>
+            <span class="brand-name">RYRA & CO.</span>
+        </div>
+        <h1>Product Catalogs</h1>
+        <p class="sub">Browse and share our collections.</p>
+
+        <div class="card">
+            <h2>📦 Browse Catalogs</h2>
+            <a href="html_catalogs/catalog_mens_jewelry.html" target="_blank">Men's Jewelry & Accessories</a>
+            <a href="html_catalogs/catalog_womens_jewelry.html" target="_blank">Women's Jewelry & Accessories</a>
+            <a href="html_catalogs/catalog_womens_clutches.html" target="_blank">Women's Clutches</a>
+            <a href="html_catalogs/catalog_mens_accessories.html" target="_blank">Men's Accessories</a>
+        </div>
+
+        <div class="card">
+            <h2>➕ Add a Product</h2>
+            <a href="catalog_form.html" target="_blank">Open Add Product Form</a>
+            <p class="note">The form runs locally. Start the server: <code>python catalog_server.py</code> then open <code>http://127.0.0.1:5001</code>.</p>
+        </div>
+    </div>
+</body>
+</html>
