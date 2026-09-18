@@ -40,6 +40,14 @@
       "price": "d2",
       "image": "images/53aaa43980534a0783896f88b408242b.png",
       "category": "Other"
+    },
+    {
+      "name": "jhf",
+      "sku": "jhg",
+      "description": "hjf",
+      "price": "35",
+      "image": "images/bedf7d02b4cb4733ab397133ebb3d200.png",
+      "category": "Earrings"
     }
   ]
 }
