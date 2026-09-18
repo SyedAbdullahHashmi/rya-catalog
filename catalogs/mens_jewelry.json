@@ -206,14 +206,6 @@
       "price": "Rs. 750",
       "image": "",
       "category": "Earrings"
-    },
-    {
-      "name": "No Cat Test",
-      "sku": "NC-FINAL-001",
-      "description": "No category specified.",
-      "price": "Rs. 50",
-      "image": "",
-      "category": "Other"
     }
   ]
 }
