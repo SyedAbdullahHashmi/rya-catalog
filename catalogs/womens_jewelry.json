@@ -2,14 +2,6 @@
   "name": "Women's Jewelry & Accessories",
   "products": [
     {
-      "name": "Gold Hoop Earrings",
-      "sku": "GHE-001",
-      "description": "14k gold-plated, 20mm diameter, lightweight and tarnish resistant.",
-      "price": "Rs. 45.00",
-      "image": "",
-      "category": "Earrings"
-    },
-    {
       "name": "Pearl Necklace",
       "sku": "PN-002",
       "description": "8mm freshwater pearls on silk ribbon, adjustable clasp.",
