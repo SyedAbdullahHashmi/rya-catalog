@@ -5,7 +5,7 @@
       "name": "Leather Wallet",
       "sku": "LW-002",
       "description": "Genuine full-grain leather, RFID blocking, 6 card slots.",
-      "price": "$65.00",
+      "price": "Rs. $65.00",
       "image": "",
       "category": "Wallets",
       "out_of_stock": false
@@ -14,7 +14,7 @@
       "name": "Slim Keychain",
       "sku": "SK-003",
       "description": "Brushed aluminum, laser-etched logo, split ring included.",
-      "price": "$18.00",
+      "price": "Rs. $18.00",
       "image": "",
       "category": "Necklaces"
     },
@@ -22,7 +22,7 @@
       "name": "Sunglasses",
       "sku": "SG-004",
       "description": "Polarized UV400 lenses, acetate frame, comes with hard case.",
-      "price": "$120.00",
+      "price": "Rs. $120.00",
       "image": "",
       "category": "Sunglasses"
     },
@@ -30,7 +30,7 @@
       "name": "test",
       "sku": "oiyo",
       "description": "yhlkj",
-      "price": "465757",
+      "price": "Rs. 465757",
       "image": "images/6b0217652ee94195b521aeabbfe1c014.jpg",
       "category": "Other"
     },
@@ -38,7 +38,7 @@
       "name": "jhgk",
       "sku": "kuoi",
       "description": "lkjlk",
-      "price": "6587ljolk",
+      "price": "Rs. 6587ljolk",
       "image": "https://m.media-amazon.com/images/I/712FOALLalL._SY695_.jpg",
       "category": "Other"
     },
@@ -46,7 +46,7 @@
       "name": "Mac Test Product",
       "sku": "MAC-001",
       "description": "Added from macOS to verify server works.",
-      "price": "$9.99",
+      "price": "Rs. $9.99",
       "image": "",
       "category": "Other"
     },
@@ -54,7 +54,7 @@
       "name": "Test",
       "sku": "RY300",
       "description": "Cuban link chain silver, multi color",
-      "price": "39090",
+      "price": "Rs. 39090",
       "image": "images/cf3746b06f804a6ea5e61b56136f9640.png",
       "category": "Other"
     },
@@ -70,7 +70,7 @@
       "name": "Blue Shade Cuban Link Bracelet",
       "sku": "RY466",
       "description": "Bold blue-shaded links with an iced finish for a striking, statement-making look.",
-      "price": "2999",
+      "price": "Rs. 2999",
       "image": "images/6750921cfbc64c08854503f737d740ce.png",
       "category": "Bracelets"
     },

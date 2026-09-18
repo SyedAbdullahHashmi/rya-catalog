@@ -37,8 +37,8 @@ def write_catalog(path, data):
         f.write("\n")
 
 
-def _auto_publish(catalog_key):
-    """Rebuild HTML catalogs, commit, and push to GitHub after a product is added."""
+def _auto_publish(catalog_key, message=None):
+    """Rebuild HTML catalogs, commit, and push to GitHub after a product is added/edited/deleted/toggled."""
     # 1. Rebuild HTML
     script = Path(BASE_DIR) / "build_catalogs.py"
     subprocess.run([sys.executable, str(script)], cwd=BASE_DIR,
@@ -53,7 +53,9 @@ def _auto_publish(catalog_key):
 
     subprocess.run(["git", "add", "."], cwd=BASE_DIR,
                    capture_output=True, check=True)
-    subprocess.run(["git", "commit", "-m", f"Add product to {catalog_key}"],
+    if not message:
+        message = f"Add product to {catalog_key}"
+    subprocess.run(["git", "commit", "-m", message],
                    cwd=BASE_DIR, capture_output=True, check=False)
     subprocess.run(["git", "push", "origin", "main"],
                    cwd=BASE_DIR, capture_output=True, check=False)
@@ -130,6 +132,8 @@ class Handler(BaseHTTPRequestHandler):
         sku = (data.get("sku") or "").strip()
         description = (data.get("description") or "").strip()
         price = (data.get("price") or "").strip()
+        if price and not price.startswith("Rs."):
+            price = "Rs. " + price
         image_url = (data.get("image_url") or "").strip()
         image_data = (data.get("image_data") or "").strip()
         category = (data.get("category") or "Other").strip() or "Other"
@@ -284,12 +288,14 @@ class Handler(BaseHTTPRequestHandler):
         p = products[idx]
         p["name"] = (data.get("name") or "").strip()
         p["price"] = (data.get("price") or "").strip()
+        if p["price"] and not p["price"].startswith("Rs."):
+            p["price"] = "Rs. " + p["price"]
         p["description"] = (data.get("description") or "").strip()
         p["category"] = (data.get("category") or "Other").strip() or "Other"
         # SKU is not editable from admin (preserve original)
         write_catalog(CATALOGS[catalog_key], cat)
         try:
-            _auto_publish(catalog_key)
+            _auto_publish(catalog_key, message=f"Edit product in {catalog_key}: {p['name']}")
         except Exception as e:
             sys.stderr.write(f"admin-edit auto-publish failed: {e}\n")
         self.send_json({"ok": True, "name": p["name"]})
@@ -318,7 +324,7 @@ class Handler(BaseHTTPRequestHandler):
         del products[idx]
         write_catalog(CATALOGS[catalog_key], cat)
         try:
-            _auto_publish(catalog_key)
+            _auto_publish(catalog_key, message=f"Delete product from {catalog_key}: {name}")
         except Exception as e:
             sys.stderr.write(f"admin-delete auto-publish failed: {e}\n")
         self.send_json({"ok": True, "name": name})
@@ -347,7 +353,8 @@ class Handler(BaseHTTPRequestHandler):
         p["out_of_stock"] = not bool(p.get("out_of_stock"))
         write_catalog(CATALOGS[catalog_key], cat)
         try:
-            _auto_publish(catalog_key)
+            action = "out of stock" if p["out_of_stock"] else "back in stock"
+            _auto_publish(catalog_key, message=f"Toggle stock {action} in {catalog_key}: {p['name']}")
         except Exception as e:
             sys.stderr.write(f"admin-toggle-stock auto-publish failed: {e}\n")
         self.send_json({

@@ -5,7 +5,7 @@
       "name": "Structured Clutch",
       "sku": "SC-001",
       "description": "Vegan leather, goldtone hardware, zip closure, fits phone and essentials.",
-      "price": "$72.00",
+      "price": "Rs. $72.00",
       "image": "",
       "category": "Bags & Clutches"
     },
@@ -13,7 +13,7 @@
       "name": "Metallic Evening Bag",
       "sku": "MEB-002",
       "description": "Holographic silver finish, chain strap, snap button closure.",
-      "price": "$95.00",
+      "price": "Rs. $95.00",
       "image": "",
       "category": "Bags & Clutches"
     },
@@ -21,7 +21,7 @@
       "name": "Mini Crossbody",
       "sku": "MC-003",
       "description": "Soft pebbled leather, adjustable strap, magnetic flap, compact size.",
-      "price": "$58.00",
+      "price": "Rs. $58.00",
       "image": "",
       "category": "Bags & Clutches"
     },
@@ -29,7 +29,7 @@
       "name": "Test",
       "sku": "233",
       "description": "fasf",
-      "price": "12312",
+      "price": "Rs. 12312",
       "image": "images/862a4f7d01b44df88f4efc4b706d81d2.png",
       "category": "Bags & Clutches"
     },
@@ -37,7 +37,7 @@
       "name": "rere",
       "sku": "erq",
       "description": "erdf",
-      "price": "d2",
+      "price": "Rs. d2",
       "image": "images/53aaa43980534a0783896f88b408242b.png",
       "category": "Other"
     },
@@ -45,7 +45,7 @@
       "name": "jhf",
       "sku": "jhg",
       "description": "hjf",
-      "price": "35",
+      "price": "Rs. 35",
       "image": "images/bedf7d02b4cb4733ab397133ebb3d200.png",
       "category": "Earrings"
     },
@@ -53,7 +53,7 @@
       "name": "qwes",
       "sku": "afasf",
       "description": "asdasf",
-      "price": "1213",
+      "price": "Rs. 1213",
       "image": "images/2f04aafd286b42de803811a9f8bce891.png",
       "category": "Earrings"
     }
