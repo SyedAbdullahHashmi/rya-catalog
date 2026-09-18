@@ -160,6 +160,14 @@
       "price": "Rs. 4999",
       "image": "images/728dae4f548d448b90db61a62ee97ef3.png",
       "category": "Necklaces"
+    },
+    {
+      "name": "Silver Crystal Link Bracelet",
+      "sku": "RY445",
+      "description": "Brilliant crystal links with a polished silver finish for a sleek, refined statement.",
+      "price": "Rs. 2599",
+      "image": "images/b557a2d95b9d4feebd9bde27c6fb9716.png",
+      "category": "Bracelets"
     }
   ]
 }
