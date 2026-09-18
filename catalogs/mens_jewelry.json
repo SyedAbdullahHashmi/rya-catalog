@@ -152,6 +152,14 @@
       "price": "Rs. 999",
       "image": "images/20f33a9b9f17489897883dde38e137de.png",
       "category": "Rings"
+    },
+    {
+      "name": "Rose Gold Crystal Tennis Necklace",
+      "sku": "RY446",
+      "description": "Brilliant crystal detailing set against a soft rose gold finish for a refined, luxurious look.",
+      "price": "Rs. 4999",
+      "image": "images/728dae4f548d448b90db61a62ee97ef3.png",
+      "category": "Necklaces"
     }
   ]
 }
