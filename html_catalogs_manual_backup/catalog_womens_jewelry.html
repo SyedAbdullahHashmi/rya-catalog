@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Women&#x27;s Jewelry &amp; Accessories — RYRA &amp; CO. Catalogue</title>
+    <style>
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #2f2115;
+            background: #edd3a8;
+            padding: 0;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px 40px;
+        }
+
+        /* ---- top brand strip (RYRA & CO. wordmark) ---- */
+        .brand-strip {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 18px 0 14px;
+            border-bottom: 1.5px solid #d5ac55;
+            margin-bottom: 24px;
+        }
+        .brand-mark {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .brand-icon {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d5ac55;
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .brand-icon::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 7px;
+            height: 7px;
+            background: #d5ac55;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .brand-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #2f2115;
+        }
+        .brand-contact {
+            font-size: 0.7rem;
+            color: #4a3720;
+            text-align: right;
+            line-height: 1.4;
+        }
+
+        /* ---- section header ---- */
+        .section-header {
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+        }
+        .section-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2f2115;
+            letter-spacing: -0.01em;
+            margin-bottom: 4px;
+            line-height: 1.15;
+        }
+        .section-sub {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #d5ac55;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        /* ---- category bar ---- */
+        .category-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #e0ceaa;
+        }
+        .category-btn {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: #2f2115;
+            background: #fdf2de;
+            border: 1px solid #c9b896;
+            border-radius: 20px;
+            padding: 6px 14px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .category-btn:hover {
+            background: #2f2115;
+            color: #fdf2de;
+            border-color: #2f2115;
+        }
+        .category-btn.active {
+            background: #2f2115;
+            color: #fdf2de;
+            border-color: #2f2115;
+        }
+        .category-count {
+            font-weight: 400;
+            opacity: 0.65;
+            margin-left: 4px;
+            font-size: 0.65rem;
+        }
+
+        /* ---- product grid ---- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px 20px;
+        }
+
+        /* ---- product card ---- */
+        .product-card {
+            background: #fdf2de;
+            border: 1px solid #c9b896;
+            border-radius: 1px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            break-inside: avoid;
+            page-break-inside: avoid;
+            scroll-margin-top: 20px;
+        }
+        .card-image {
+            background: #ffffff;
+            width: 100%;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid #c9b896;
+        }
+        .product-image {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+        .product-image-placeholder {
+            font-size: 2.2rem;
+            color: #c9b896;
+            font-weight: 300;
+        }
+        .product-image-missing {
+            font-size: 0.7rem;
+            color: #c9b896;
+            padding: 10px;
+            text-align: center;
+        }
+        .card-body {
+            padding: 12px 14px 16px;
+            flex: 1;
+        }
+        .card-category {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #4a3720;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 3px;
+        }
+        .card-name {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 0.92rem;
+            font-weight: 400;
+            color: #604622;
+            margin-bottom: 5px;
+            line-height: 1.35;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .card-price {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: #2f2115;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 56px 20px;
+            color: #4a3720;
+            font-size: 0.85rem;
+        }
+
+        .catalog-footer {
+            margin-top: 36px;
+            padding-top: 14px;
+            border-top: 1px solid #c9b896;
+            font-size: 0.68rem;
+            color: #4a3720;
+            text-align: center;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 960px) {
+            .grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+            .card-image { height: 260px; }
+            .product-image { height: 260px; }
+            .page { padding: 0 20px 32px; }
+            .section-title { font-size: 1.6rem; }
+        }
+        @media (max-width: 560px) {
+            .grid { grid-template-columns: 1fr; gap: 12px; }
+            .card-image { height: 280px; }
+            .product-image { height: 280px; }
+            .brand-strip { flex-direction: column; align-items: flex-start; gap: 6px; }
+            .brand-contact { text-align: left; }
+            .section-title { font-size: 1.3rem; }
+            .page { padding: 0 14px 24px; }
+        }
+        @media print {
+            body { background: #ffffff; }
+            .page { max-width: 100%; padding: 20px; }
+            .product-card {
+                box-shadow: none;
+                border: 1px solid #bbb;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .card-image { border-bottom: 1px solid #bbb; }
+            .brand-strip { border-bottom: 1px solid #bbb; }
+            .catalog-footer { border-top: 1px solid #bbb; }
+            .category-bar { display: none; }
+            .section-title { font-size: 1.4rem; }
+            .section-sub { color: #2f2115; }
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="brand-strip">
+            <div class="brand-mark">
+                <span class="brand-icon" aria-hidden="true"></span>
+                <span class="brand-name">RYRA &amp; CO.</span>
+            </div>
+            <div class="brand-contact">
+                www.ryranco.com<br>
+                @ryraco_
+            </div>
+        </div>
+
+        <div class="section-header">
+            <div class="section-title">Women&#x27;s Jewelry &amp; Accessories</div>
+            <div class="section-sub">Catalog</div>
+        </div>
+
+        <div class="category-bar" id="category-bar">
+            <a class="category-btn" href="#category-earrings">Earrings<span class="category-count">1</span></a>
+            <a class="category-btn" href="#category-necklaces">Necklaces<span class="category-count">1</span></a>
+        </div>
+
+        <div class="grid" id="product-grid">
+            
+        <div class="product-card" data-category="earrings">
+            <div class="card-image"><div class="product-image-placeholder">+</div></div>
+            <div class="card-body">
+                <div class="card-category">Earrings</div>
+                <div class="card-name">Gold Hoop Earrings</div>
+                <div class="card-price">$45.00</div>
+            </div>
+        </div>
+        
+
+        <div class="product-card" data-category="necklaces">
+            <div class="card-image"><div class="product-image-placeholder">+</div></div>
+            <div class="card-body">
+                <div class="card-category">Necklaces</div>
+                <div class="card-name">Pearl Necklace</div>
+                <div class="card-price">$89.00</div>
+            </div>
+        </div>
+        
+        </div>
+
+        <footer class="catalog-footer">
+            Women&#x27;s Jewelry &amp; Accessories — RYRA &amp; CO. Catalogue
+        </footer>
+    </div>
+
+    <script>
+    (function() {
+        var bar = document.getElementById('category-bar');
+        var grid = document.getElementById('product-grid');
+        if (!bar || !grid) return;
+
+        var allCards = grid.querySelectorAll('.product-card');
+        var btns = bar.querySelectorAll('.category-btn');
+        var activeCat = null;
+
+        btns.forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = btn.getAttribute('href');
+                if (!target) return;
+                var cat = target.replace('#category-', '').replace(/-/g, ' ');
+
+                if (activeCat === cat) {
+                    activeCat = null;
+                    allCards.forEach(function(c) { c.style.display = ''; });
+                    btns.forEach(function(b) { b.classList.remove('active'); });
+                    return;
+                }
+
+                activeCat = cat;
+                allCards.forEach(function(c) {
+                    var cCat = (c.getAttribute('data-category') || '').replace(/-/g, ' ');
+                    c.style.display = (cCat === cat) ? '' : 'none';
+                });
+                btns.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

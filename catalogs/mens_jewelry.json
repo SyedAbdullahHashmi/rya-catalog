@@ -1,0 +1,235 @@
+{
+  "name": "Men's Jewelry & Accessories",
+  "products": [
+    {
+      "name": "Stainless Steel Watch",
+      "sku": "SSW-001",
+      "description": "Rugged 42mm case, sapphire crystal, 100m water resistant.",
+      "price": "$249.00",
+      "image": "",
+      "category": "Watches"
+    },
+    {
+      "name": "Leather Wallet",
+      "sku": "LW-002",
+      "description": "Genuine full-grain leather, RFID blocking, 6 card slots.",
+      "price": "$65.00",
+      "image": "",
+      "category": "Wallets"
+    },
+    {
+      "name": "Slim Keychain",
+      "sku": "SK-003",
+      "description": "Brushed aluminum, laser-etched logo, split ring included.",
+      "price": "$18.00",
+      "image": "",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Sunglasses",
+      "sku": "SG-004",
+      "description": "Polarized UV400 lenses, acetate frame, comes with hard case.",
+      "price": "$120.00",
+      "image": "",
+      "category": "Sunglasses"
+    },
+    {
+      "name": "test",
+      "sku": "oiyo",
+      "description": "yhlkj",
+      "price": "465757",
+      "image": "images/6b0217652ee94195b521aeabbfe1c014.jpg",
+      "category": "Other"
+    },
+    {
+      "name": "jhgk",
+      "sku": "kuoi",
+      "description": "lkjlk",
+      "price": "6587ljolk",
+      "image": "https://m.media-amazon.com/images/I/712FOALLalL._SY695_.jpg",
+      "category": "Other"
+    },
+    {
+      "name": "Mac Test Product",
+      "sku": "MAC-001",
+      "description": "Added from macOS to verify server works.",
+      "price": "$9.99",
+      "image": "",
+      "category": "Other"
+    },
+    {
+      "name": "Test",
+      "sku": "RY300",
+      "description": "Cuban link chain silver, multi color",
+      "price": "39090",
+      "image": "images/cf3746b06f804a6ea5e61b56136f9640.png",
+      "category": "Other"
+    },
+    {
+      "name": "Cruved Cuban Link Bracelet",
+      "sku": "RY467",
+      "description": "Bold curved links with a polished finish, designed for a sleek, statement-making look.",
+      "price": "Rs. 2799",
+      "image": "images/ca662904ac1d489288a71237f11a5391.png",
+      "category": "Bracelets"
+    },
+    {
+      "name": "Blue Shade Cuban Link Bracelet",
+      "sku": "RY466",
+      "description": "Bold blue-shaded links with an iced finish for a striking, statement-making look.",
+      "price": "2999",
+      "image": "images/6750921cfbc64c08854503f737d740ce.png",
+      "category": "Bracelets"
+    },
+    {
+      "name": "Silver Square-Cut Crystal Tennis Bracelet",
+      "sku": "RY464",
+      "description": "Brilliant square-cut crystals set in a sleek silver finish for a refined, icy look.",
+      "price": "Rs. 2899",
+      "image": "images/1c5abcec0281400780f7049d02a1c7b8.png",
+      "category": "Bracelets"
+    },
+    {
+      "name": "Black Crescent Chain Hoop Earrings",
+      "sku": "RY463",
+      "description": "Bold black crescent hoops with a sleek chain detail, designed for a sharp and masculine look.",
+      "price": "Rs. 999",
+      "image": "images/de80041d59ae4c75ab0495159bc2bbe9.png",
+      "category": "Earrings"
+    },
+    {
+      "name": "Geometric Interlocking Earrings",
+      "sku": "RY462",
+      "description": "Bold interlocking geometric design with clean lines for a sleek, modern masculine look.",
+      "price": "Rs. 999",
+      "image": "images/a57360d0d1ab4e158a8a862d3cd690d9.png",
+      "category": "Earrings"
+    },
+    {
+      "name": "Black Panther Head Hoop Earrings",
+      "sku": "RY461",
+      "description": "Bold panther head detailing on sleek black hoops for a striking, edgy look.",
+      "price": "Rs. 999",
+      "image": "images/4d562d4113f049f8afab2f751615f658.png",
+      "category": "Earrings"
+    },
+    {
+      "name": "Classic Crystal Tennis Necklace",
+      "sku": "RY460",
+      "description": "Classic crystal detailing in a sleek setting, creating a clean, timeless look with understated brilliance.",
+      "price": "Rs. 3999",
+      "image": "images/db95c3719e0944da96739a2ef22a1396.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Black Beaded Cuban Link Chain",
+      "sku": "RY459",
+      "description": "Bold black beads paired with Cuban links for a rugged, modern look with strong visual appeal.",
+      "price": "Rs. 5549",
+      "image": "images/73e955dcb8644985a51caa8d5890f302.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Black Geometric Band Ring",
+      "sku": "RY456",
+      "description": "Bold geometric detailing with a sleek black finish for a sharp, modern look.",
+      "price": "Rs. 899",
+      "image": "images/2899baa232d144648c4f2a7b2157fd05.png",
+      "category": "Rings"
+    },
+    {
+      "name": "Black Onyx Rectangular Statement Ring",
+      "sku": "RY455",
+      "description": "Deep black onyx set in a bold rectangular design for a refined, statement-making look.",
+      "price": "Rs. 899",
+      "image": "images/98c3fc9fdac44a43aa6e997ebe79d510.png",
+      "category": "Rings"
+    },
+    {
+      "name": "Crystal Disc Statement Bracelet",
+      "sku": "RY452",
+      "description": "Deep black onyx in a bold oval setting, crafted for a sleek and commanding look.",
+      "price": "Rs. 2799",
+      "image": "images/92b870dacd904a31a1e1f01c35d65a4d.png",
+      "category": "Bracelets"
+    },
+    {
+      "name": "Classic Gold Oval Statement Ring",
+      "sku": "RY448",
+      "description": "Bold oval design with a polished gold finish for a classic, refined statement.",
+      "price": "Rs. 999",
+      "image": "images/8a6a3b89a3f547fba40b740a5c2f8fc8.png",
+      "category": "Rings"
+    },
+    {
+      "name": "Luxe Gold Square-Cut Statement Ring",
+      "sku": "RY447",
+      "description": "Square-cut detailing with a rich gold finish for a bold, luxurious statement.",
+      "price": "Rs. 999",
+      "image": "images/20f33a9b9f17489897883dde38e137de.png",
+      "category": "Rings"
+    },
+    {
+      "name": "Rose Gold Crystal Tennis Necklace",
+      "sku": "RY446",
+      "description": "Brilliant crystal detailing set against a soft rose gold finish for a refined, luxurious look.",
+      "price": "Rs. 4999",
+      "image": "images/728dae4f548d448b90db61a62ee97ef3.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Silver Crystal Link Bracelet",
+      "sku": "RY445",
+      "description": "Brilliant crystal links with a polished silver finish for a sleek, refined statement.",
+      "price": "Rs. 2599",
+      "image": "images/b557a2d95b9d4feebd9bde27c6fb9716.png",
+      "category": "Bracelets"
+    },
+    {
+      "name": "Category Test Item",
+      "sku": "CAT-TEST-001",
+      "description": "Testing category field in server.",
+      "price": "Rs. 500",
+      "image": ""
+    },
+    {
+      "name": "No-Category Test",
+      "sku": "NC-TEST-001",
+      "description": "Should get 'Other' category",
+      "price": "Rs. 100",
+      "image": ""
+    },
+    {
+      "name": "Category Test Item",
+      "sku": "CAT-TEST-001",
+      "description": "Testing category field in server.",
+      "price": "Rs. 500",
+      "image": "",
+      "category": "Rings"
+    },
+    {
+      "name": "No-Category Test",
+      "sku": "NC-TEST-001",
+      "description": "Should get 'Other' category",
+      "price": "Rs. 100",
+      "image": "",
+      "category": "Other"
+    },
+    {
+      "name": "Final Cat Test",
+      "sku": "FINAL-CAT-001",
+      "description": "Verifying category field end-to-end.",
+      "price": "Rs. 750",
+      "image": "",
+      "category": "Earrings"
+    },
+    {
+      "name": "No Cat Test",
+      "sku": "NC-FINAL-001",
+      "description": "No category specified.",
+      "price": "Rs. 50",
+      "image": "",
+      "category": "Other"
+    }
+  ]
+}

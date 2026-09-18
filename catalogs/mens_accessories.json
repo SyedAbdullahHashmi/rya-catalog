@@ -1,0 +1,61 @@
+{
+  "name": "Men's Accessories",
+  "products": [
+    {
+      "name": "Black Star Layered Pendant Necklace",
+      "sku": "RY451",
+      "description": "Layered black star pendants with a bold finish for an edgy, contemporary look.",
+      "price": "Rs. 1799",
+      "image": "images/a093e50b98ba4694af97e7c3008a4029.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Silver Lightning Bolt Pendant Necklace",
+      "sku": "RY450",
+      "description": "Sharp lightning bolt pendant with a polished silver finish for a bold, energetic look.",
+      "price": "Rs. 2199",
+      "image": "images/924593863d2541988cb7db4ecd25598b.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Black Crescent Bar Pendant Necklace",
+      "sku": "RY449",
+      "description": "Sleek black crescent bar pendant with a clean, modern design for a sharp everyday look.",
+      "price": "Rs. 1999",
+      "image": "images/a4169fe72a434f849d19e4d444a88295.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Turquoise Feather Charm Necklace",
+      "sku": "RY444",
+      "description": "Intricate detailing for a distinctive, free-spirited look.",
+      "price": "Rs. 1799",
+      "image": "images/cbbf4209d1554a6fa4d30e9211ade6e7.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Double Orbit Pendant",
+      "sku": "RY442",
+      "description": "Interlinked circular design with a sleek finish for a modern, understated statement.",
+      "price": "Rs. 1999",
+      "image": "images/1169aabee0d24c5d8423177bf83c1954.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Men’s Black Pendant Chain",
+      "sku": "RY419",
+      "description": "Sleek black pendant design paired with a bold chain for a sharp, contemporary look.",
+      "price": "Rs. 799",
+      "image": "images/542063d2e0a34ee289e8e6346bd4f2dd.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Lightning Bolt Black Inlay Pendant Necklace",
+      "sku": "RY420",
+      "description": "Bold lightning bolt design with a sleek black inlay for a sharp, modern statement.",
+      "price": "Rs. 1299",
+      "image": "images/74caa1ecc635471f8b2eaf82a95c617d.png",
+      "category": "Necklaces"
+    }
+  ]
+}

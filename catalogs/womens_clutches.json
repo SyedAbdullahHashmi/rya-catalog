@@ -1,0 +1,29 @@
+{
+  "name": "Women's Clutches",
+  "products": [
+    {
+      "name": "Structured Clutch",
+      "sku": "SC-001",
+      "description": "Vegan leather, goldtone hardware, zip closure, fits phone and essentials.",
+      "price": "$72.00",
+      "image": "",
+      "category": "Bags & Clutches"
+    },
+    {
+      "name": "Metallic Evening Bag",
+      "sku": "MEB-002",
+      "description": "Holographic silver finish, chain strap, snap button closure.",
+      "price": "$95.00",
+      "image": "",
+      "category": "Bags & Clutches"
+    },
+    {
+      "name": "Mini Crossbody",
+      "sku": "MC-003",
+      "description": "Soft pebbled leather, adjustable strap, magnetic flap, compact size.",
+      "price": "$58.00",
+      "image": "",
+      "category": "Bags & Clutches"
+    }
+  ]
+}

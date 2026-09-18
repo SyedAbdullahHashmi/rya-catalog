@@ -1,0 +1,1 @@
+["mens_jewelry", "womens_jewelry", "womens_clutches", "mens_accessories"]
