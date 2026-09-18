@@ -8,7 +8,7 @@
       "price": "$65.00",
       "image": "",
       "category": "Wallets",
-      "out_of_stock": true
+      "out_of_stock": false
     },
     {
       "name": "Slim Keychain",
