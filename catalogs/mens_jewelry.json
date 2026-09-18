@@ -190,14 +190,6 @@
       "price": "Rs. 500",
       "image": "",
       "category": "Rings"
-    },
-    {
-      "name": "No-Category Test",
-      "sku": "NC-TEST-001",
-      "description": "Should get 'Other' category",
-      "price": "Rs. 100",
-      "image": "",
-      "category": "Other"
     }
   ]
 }
