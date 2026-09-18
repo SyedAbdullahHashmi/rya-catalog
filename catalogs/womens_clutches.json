@@ -24,6 +24,14 @@
       "price": "$58.00",
       "image": "",
       "category": "Bags & Clutches"
+    },
+    {
+      "name": "Test",
+      "sku": "233",
+      "description": "fasf",
+      "price": "12312",
+      "image": "images/862a4f7d01b44df88f4efc4b706d81d2.png",
+      "category": "Bags & Clutches"
     }
   ]
 }
