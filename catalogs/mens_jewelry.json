@@ -198,14 +198,6 @@
       "price": "Rs. 100",
       "image": "",
       "category": "Other"
-    },
-    {
-      "name": "Final Cat Test",
-      "sku": "FINAL-CAT-001",
-      "description": "Verifying category field end-to-end.",
-      "price": "Rs. 750",
-      "image": "",
-      "category": "Earrings"
     }
   ]
 }
