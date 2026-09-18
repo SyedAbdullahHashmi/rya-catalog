@@ -5,7 +5,7 @@
       "name": "Leather Wallet",
       "sku": "LW-002",
       "description": "Genuine full-grain leather, RFID blocking, 6 card slots.",
-      "price": "Rs. $65.00",
+      "price": "Rs. 65.00",
       "image": "",
       "category": "Wallets",
       "out_of_stock": false
@@ -14,7 +14,7 @@
       "name": "Slim Keychain",
       "sku": "SK-003",
       "description": "Brushed aluminum, laser-etched logo, split ring included.",
-      "price": "Rs. $18.00",
+      "price": "Rs. 18.00",
       "image": "",
       "category": "Necklaces"
     },
@@ -22,7 +22,7 @@
       "name": "Sunglasses",
       "sku": "SG-004",
       "description": "Polarized UV400 lenses, acetate frame, comes with hard case.",
-      "price": "Rs. $120.00",
+      "price": "Rs. 120.00",
       "image": "",
       "category": "Sunglasses"
     },
@@ -46,7 +46,7 @@
       "name": "Mac Test Product",
       "sku": "MAC-001",
       "description": "Added from macOS to verify server works.",
-      "price": "Rs. $9.99",
+      "price": "Rs. 9.99",
       "image": "",
       "category": "Other"
     },
