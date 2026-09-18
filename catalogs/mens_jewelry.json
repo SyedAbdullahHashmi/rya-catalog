@@ -10,14 +10,6 @@
       "category": "Sunglasses"
     },
     {
-      "name": "jhgk",
-      "sku": "kuoi",
-      "description": "lkjlk",
-      "price": "Rs. 6587ljolk",
-      "image": "https://m.media-amazon.com/images/I/712FOALLalL._SY695_.jpg",
-      "category": "Other"
-    },
-    {
       "name": "Mac Test Product",
       "sku": "MAC-001",
       "description": "Added from macOS to verify server works.",
