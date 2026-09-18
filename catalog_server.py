@@ -6,8 +6,10 @@ Black / gray / white UI. Supports either an image URL or a locally-picked file (
 
 import json
 import os
+import subprocess
 import sys
 import uuid
+from pathlib import Path
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -33,6 +35,28 @@ def write_catalog(path, data):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")
+
+
+def _auto_publish(catalog_key):
+    """Rebuild HTML catalogs, commit, and push to GitHub after a product is added."""
+    # 1. Rebuild HTML
+    script = Path(BASE_DIR) / "build_catalogs.py"
+    subprocess.run([sys.executable, str(script)], cwd=BASE_DIR,
+                   capture_output=True, timeout=120)
+
+    # 2. Git add + commit + push
+    catalog_file = Path(CATALOGS[catalog_key])
+    html_dir = Path(BASE_DIR) / "html_catalogs"
+    files_to_add = [str(catalog_file)]
+    if html_dir.exists():
+        files_to_add.extend(str(p) for p in html_dir.glob("catalog_*.html"))
+
+    subprocess.run(["git", "add"] + files_to_add, cwd=BASE_DIR,
+                   capture_output=True, check=False)
+    subprocess.run(["git", "commit", "-m", f"Add product to {catalog_key}"],
+                   cwd=BASE_DIR, capture_output=True, check=False)
+    subprocess.run(["git", "push", "origin", "main"],
+                   cwd=BASE_DIR, capture_output=True, check=False)
 
 
 def save_uploaded_image(data_url):
@@ -126,6 +150,13 @@ class Handler(BaseHTTPRequestHandler):
             "category": category,
         })
         write_catalog(CATALOGS[catalog_key], cat)
+
+        # Auto-publish: rebuild HTML + commit + push to GitHub
+        try:
+            _auto_publish(catalog_key)
+        except Exception as e:
+            # Log but don't fail the request — product is saved either way
+            sys.stderr.write(f"auto-publish failed: {e}\n")
 
         self.send_json({
             "ok": True,
