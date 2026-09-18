@@ -2,14 +2,6 @@
   "name": "Men's Jewelry & Accessories",
   "products": [
     {
-      "name": "Sunglasses",
-      "sku": "SG-004",
-      "description": "Polarized UV400 lenses, acetate frame, comes with hard case.",
-      "price": "Rs. 120.00",
-      "image": "",
-      "category": "Sunglasses"
-    },
-    {
       "name": "Cruved Cuban Link Bracelet",
       "sku": "RY467",
       "description": "Bold curved links with a polished finish, designed for a sleek, statement-making look.",
