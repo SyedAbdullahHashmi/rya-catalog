@@ -10,14 +10,6 @@
       "category": "Sunglasses"
     },
     {
-      "name": "Mac Test Product",
-      "sku": "MAC-001",
-      "description": "Added from macOS to verify server works.",
-      "price": "Rs. 9.99",
-      "image": "",
-      "category": "Other"
-    },
-    {
       "name": "Test",
       "sku": "RY300",
       "description": "Cuban link chain silver, multi color",
