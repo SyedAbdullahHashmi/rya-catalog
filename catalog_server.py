@@ -80,7 +80,9 @@ def save_uploaded_image(data_url):
 
 class Handler(BaseHTTPRequestHandler):
     def do_GET(self):
-        if self.path == "/admin" or self.path == "/admin/":
+        if self.path == "/admin/data":
+            self._admin_data()
+        elif self.path == "/admin" or self.path == "/admin/":
             self._serve_admin()
         elif self.path in ("/", "/index.html"):
             self._serve_form()
@@ -231,6 +233,11 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", "text/html; charset=utf-8")
         self.end_headers()
         self.wfile.write(html)
+
+    def _admin_data(self):
+        """JSON endpoint for the admin page to load catalog data."""
+        data = self._admin_list_catalogs()
+        self.send_json(data)
 
     def _admin_list_catalogs(self):
         out = []

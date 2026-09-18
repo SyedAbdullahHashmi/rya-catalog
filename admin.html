@@ -139,7 +139,7 @@
 
         async function loadCatalogs() {
             try {
-                const res = await fetch('/admin');
+                const res = await fetch('/admin/data');
                 if (!res.ok) throw new Error('Server returned ' + res.status);
                 const data = await res.json();
                 render(data);
