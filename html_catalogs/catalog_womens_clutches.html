@@ -161,12 +161,18 @@
             justify-content: center;
             overflow: hidden;
             border-bottom: 1px solid #c9b896;
+            cursor: zoom-in;
         }
         .product-image {
             width: 100%;
             height: 320px;
-            object-fit: cover;
+            object-fit: contain;
             display: block;
+            transition: transform 0.25s ease;
+        }
+        .product-image:hover {
+            transform: scale(1.6);
+            cursor: zoom-in;
         }
         .product-image-placeholder {
             font-size: 2.2rem;
@@ -314,7 +320,7 @@
             <div class="card-body">
                 <div class="card-category">Bags &amp; Clutches</div>
                 <div class="card-name">Structured Clutch</div>
-                <div class="card-price">$72.00</div>
+                <div class="card-price">Rs. 72.00</div>
                 
             </div>
         </div>
@@ -325,7 +331,7 @@
             <div class="card-body">
                 <div class="card-category">Bags &amp; Clutches</div>
                 <div class="card-name">Metallic Evening Bag</div>
-                <div class="card-price">$95.00</div>
+                <div class="card-price">Rs. 95.00</div>
                 
             </div>
         </div>
@@ -336,7 +342,7 @@
             <div class="card-body">
                 <div class="card-category">Bags &amp; Clutches</div>
                 <div class="card-name">Mini Crossbody</div>
-                <div class="card-price">$58.00</div>
+                <div class="card-price">Rs. 58.00</div>
                 
             </div>
         </div>
@@ -347,7 +353,7 @@
             <div class="card-body">
                 <div class="card-category">Bags &amp; Clutches</div>
                 <div class="card-name">Test</div>
-                <div class="card-price">12312</div>
+                <div class="card-price">Rs. 12312</div>
                 
             </div>
         </div>
@@ -358,7 +364,7 @@
             <div class="card-body">
                 <div class="card-category">Other</div>
                 <div class="card-name">rere</div>
-                <div class="card-price">d2</div>
+                <div class="card-price">Rs. d2</div>
                 
             </div>
         </div>
@@ -369,7 +375,7 @@
             <div class="card-body">
                 <div class="card-category">Earrings</div>
                 <div class="card-name">jhf</div>
-                <div class="card-price">35</div>
+                <div class="card-price">Rs. 35</div>
                 
             </div>
         </div>
@@ -380,7 +386,7 @@
             <div class="card-body">
                 <div class="card-category">Earrings</div>
                 <div class="card-name">qwes</div>
-                <div class="card-price">1213</div>
+                <div class="card-price">Rs. 1213</div>
                 
             </div>
         </div>
