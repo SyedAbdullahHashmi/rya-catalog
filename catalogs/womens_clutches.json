@@ -32,6 +32,14 @@
       "price": "12312",
       "image": "images/862a4f7d01b44df88f4efc4b706d81d2.png",
       "category": "Bags & Clutches"
+    },
+    {
+      "name": "rere",
+      "sku": "erq",
+      "description": "erdf",
+      "price": "d2",
+      "image": "images/53aaa43980534a0783896f88b408242b.png",
+      "category": "Other"
     }
   ]
 }
