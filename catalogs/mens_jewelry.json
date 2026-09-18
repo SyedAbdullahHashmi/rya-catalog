@@ -182,14 +182,6 @@
       "description": "Should get 'Other' category",
       "price": "Rs. 100",
       "image": ""
-    },
-    {
-      "name": "Category Test Item",
-      "sku": "CAT-TEST-001",
-      "description": "Testing category field in server.",
-      "price": "Rs. 500",
-      "image": "",
-      "category": "Rings"
     }
   ]
 }
