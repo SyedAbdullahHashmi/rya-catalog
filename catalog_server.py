@@ -51,8 +51,8 @@ def _auto_publish(catalog_key):
     if html_dir.exists():
         files_to_add.extend(str(p) for p in html_dir.glob("catalog_*.html"))
 
-    subprocess.run(["git", "add"] + files_to_add, cwd=BASE_DIR,
-                   capture_output=True, check=False)
+    subprocess.run(["git", "add", "."], cwd=BASE_DIR,
+                   capture_output=True, check=True)
     subprocess.run(["git", "commit", "-m", f"Add product to {catalog_key}"],
                    cwd=BASE_DIR, capture_output=True, check=False)
     subprocess.run(["git", "push", "origin", "main"],
