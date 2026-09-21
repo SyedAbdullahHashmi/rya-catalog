@@ -122,14 +122,6 @@
       "category": "Bracelets"
     },
     {
-      "name": "Stainless Steel Watch",
-      "sku": "SSW-001",
-      "description": "Rugged 42mm case, sapphire crystal, 100m water resistant.",
-      "price": "$249.00",
-      "image": "",
-      "category": "Other"
-    },
-    {
       "name": "Leather Wallet",
       "sku": "LW-002",
       "description": "Genuine full-grain leather, RFID blocking, 6 card slots.",
