@@ -210,20 +210,12 @@
       "category": "Bracelets"
     },
     {
-      "name": "Stainless Steel Watch",
-      "sku": "SSW-001",
-      "description": "Rugged 42mm case, sapphire crystal, 100m water resistant.",
-      "price": "$249.00",
-      "image": "",
-      "category": "Watches"
-    },
-    {
       "name": "Leather Wallet",
       "sku": "LW-002",
       "description": "Genuine full-grain leather, RFID blocking, 6 card slots.",
       "price": "$65.00",
       "image": "",
-      "category": "Accessories"
+      "category": "Other"
     },
     {
       "name": "Slim Keychain",
@@ -231,7 +223,7 @@
       "description": "Brushed aluminum, laser-etched logo, split ring included.",
       "price": "$18.00",
       "image": "",
-      "category": "Accessories"
+      "category": "Other"
     },
     {
       "name": "Sunglasses",
@@ -239,7 +231,7 @@
       "description": "Polarized UV400 lenses, acetate frame, comes with hard case.",
       "price": "$120.00",
       "image": "",
-      "category": "Eyewear"
+      "category": "Other"
     },
     {
       "name": "Test",
