@@ -8,6 +8,254 @@
       "price": "Rs. 89.00",
       "image": "",
       "category": "Necklaces"
+    },
+    {
+      "name": "7 Layers Ring",
+      "sku": "RY477",
+      "description": "18K Gold Plated",
+      "price": "Rs. 999",
+      "image": "images/57c2eac861ac40f2a22a0fa3074a683c.png",
+      "category": "Rings"
+    },
+    {
+      "name": "Pink Enamel Bracelet",
+      "sku": "RY476",
+      "description": "18k Gold Plated",
+      "price": "Rs. 2199",
+      "image": "images/ba4792bf73b54ea5bc15389becb30f77.png",
+      "category": "Bracelets"
+    },
+    {
+      "name": "Solitaire Hoop",
+      "sku": "RY471",
+      "description": "18K Gold Plated",
+      "price": "Rs. 1999",
+      "image": "images/4cb4edf163d944c1aa31b175bcda9a48.png",
+      "category": "Earrings"
+    },
+    {
+      "name": "The Leaves ring",
+      "sku": "RY478",
+      "description": "18K Gold Plated",
+      "price": "Rs. 999",
+      "image": "images/4fad35e2150e474eb33b4cb525683958.png",
+      "category": "Rings"
+    },
+    {
+      "name": "The Swan Necklace",
+      "sku": "RY472",
+      "description": "18K Gold Plated",
+      "price": "Rs. 2399",
+      "image": "images/4a52a7c9707d472a9878b714482efc26.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Tulip bracelet Golden",
+      "sku": "RY470",
+      "description": "18K Gold Plated",
+      "price": "Rs. 2199",
+      "image": "images/18635af2813143029a1826f441829273.png",
+      "category": "Bracelets"
+    },
+    {
+      "name": "Tulip Bracelet Silver",
+      "sku": "RY468",
+      "description": "Stainless steel, Anti Tarnish",
+      "price": "Rs. 2199",
+      "image": "images/fb134b59835c446290524df2b0d71180.png",
+      "category": "Bracelets"
+    },
+    {
+      "name": "The Heart Hoop",
+      "sku": "RY475",
+      "description": "18K Gold Plated",
+      "price": "Rs. 1999",
+      "image": "images/89c8ce4ac63043429aba11dd6da3459e.png",
+      "category": "Earrings"
+    },
+    {
+      "name": "Leaf Antlers Necklace",
+      "sku": "RY473",
+      "description": "18K Gold Plated",
+      "price": "Rs. 2699",
+      "image": "images/4670866df7b54c988f6df814e8015a5e.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Floating Pink Tulip Necklace",
+      "sku": "RY474",
+      "description": "18K Gold Plated",
+      "price": "Rs. 2299",
+      "image": "images/9a6f51c819e94458b7e2fcd02af1b865.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Crystal Charm",
+      "sku": "RY469",
+      "description": "18K Gold Plated",
+      "price": "Rs. 1999",
+      "image": "images/3db1b200682b473c8e3ea9797eaafeaa.png",
+      "category": "Other"
+    },
+    {
+      "name": "Gold Hoop Earrings",
+      "sku": "RY410",
+      "description": "Stainless steel, Anti Tarnish",
+      "price": "Rs. 1799",
+      "image": "images/a86f09716a4e4c6890bd1bbba6267235.png",
+      "category": "Earrings"
+    },
+    {
+      "name": "Gold Textured Style Earrings",
+      "sku": "RY411",
+      "description": "Stainless steel, Anti tarnish",
+      "price": "Rs. 1499",
+      "image": "images/f568e78103b4433fb82f37e573b8def7.png",
+      "category": "Other"
+    },
+    {
+      "name": "Classy Crystal Style Necklace",
+      "sku": "RY412",
+      "description": "18K Gold Plated",
+      "price": "Rs. 2399",
+      "image": "images/51121d89b27642abacb53261e1ba97a6.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Rotating flower Necklace",
+      "sku": "RY413",
+      "description": "18K Golde Plated",
+      "price": "Rs. 2399",
+      "image": "images/b220b2268b47496ba261ecaffab46e76.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Contemproray Swirl Stud",
+      "sku": "RY408",
+      "description": "Stainless Steel, Anti Tarnish",
+      "price": "Rs. 1799",
+      "image": "images/62073c34ae5f430dbc7b3b5887ef6637.png",
+      "category": "Earrings"
+    },
+    {
+      "name": "Round Stone Stud Earrings",
+      "sku": "RY407",
+      "description": "Stainless steel studs, classy finish",
+      "price": "Rs. 1999",
+      "image": "images/657fb59a1af8416d8b34e56eda52b171.png",
+      "category": "Earrings"
+    },
+    {
+      "name": "Butterfly Pearl Stud",
+      "sku": "RY406",
+      "description": "Stainless steel Stud",
+      "price": "Rs. 1799",
+      "image": "images/660c8b542fd542cfa9a881ee5f69624f.png",
+      "category": "Earrings"
+    },
+    {
+      "name": "Minimal Heart & Beads Chain",
+      "sku": "RY059",
+      "description": "18K Gold Plated",
+      "price": "R%s. 2199",
+      "image": "images/8b6d03c9ca2945c1baa2ff648fad4c62.png",
+      "category": "Other"
+    },
+    {
+      "name": "Luxury Blue Crystal Whale Pendant Necklace",
+      "sku": "RY479",
+      "description": "18K Gold Plated",
+      "price": "Rs. 2899",
+      "image": "images/c4c07a5376c547bda2a43bf107e7f532.jpg",
+      "category": "Necklaces"
+    },
+    {
+      "name": "The Royal Ruby",
+      "sku": "RY378",
+      "description": "Silver 925",
+      "price": "Rs. 3499",
+      "image": "images/945c9cceca784afe94fc4eade65dd1ee.png",
+      "category": "Other"
+    },
+    {
+      "name": "The Moon Disc",
+      "sku": "RY377",
+      "description": "Silver 925",
+      "price": "Rs. 3299",
+      "image": "images/7ec4ed8bcc48435180cf393cba3ecefc.png",
+      "category": "Other"
+    },
+    {
+      "name": "The Golden Oyester",
+      "sku": "RY375",
+      "description": "Silver 925",
+      "price": "Rs. 3399",
+      "image": "images/49874e6898034318891be15336a37e58.png",
+      "category": "Other"
+    },
+    {
+      "name": "Wing of Gold",
+      "sku": "RY374",
+      "description": "Silver 925",
+      "price": "Rs. 3449",
+      "image": "images/10e39d3dbcb6438a941512dbb43bfddb.png",
+      "category": "Other"
+    },
+    {
+      "name": "The Ivy Drop",
+      "sku": "RY373",
+      "description": "Silver 925",
+      "price": "Rs. 2999",
+      "image": "images/ccc1292367974278a483956c62ac7c9f.png",
+      "category": "Other"
+    },
+    {
+      "name": "The Sweetheart Sterling Necklace",
+      "sku": "RY372",
+      "description": "Silver 925",
+      "price": "Rs. 4999",
+      "image": "images/cffc6585de0c40a1aa03120f6d12bd0a.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "North Star Pendant",
+      "sku": "RY371",
+      "description": "Silver 925",
+      "price": "Rs. 5599",
+      "image": "images/3ad15a9299e8400cad940d36d255b518.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "The Eternal Twist Necklace",
+      "sku": "RY370",
+      "description": "Silver 925",
+      "price": "Rs. 5999",
+      "image": "images/86647675a40042a697173e64c9f67f50.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Three Wishes Necklace",
+      "sku": "RY369",
+      "description": "Silver 925",
+      "price": "Rs. 5999",
+      "image": "images/997ba94867fe4b44bf97646798a7d44b.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "The Kaleidoscope Necklace",
+      "sku": "RY368",
+      "description": "Silver 925",
+      "price": "Rs. 5299",
+      "image": "images/ecd9a2e0d0884c8280e5cb24eeadcba9.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "The Dutches Necklace",
+      "sku": "RY367",
+      "description": "Silver 925",
+      "price": "Rs. 6199",
+      "image": "images/e5b59528c8c446aaa0c9d2e8a92c03f5.png",
+      "category": "Necklaces"
     }
   ]
 }

@@ -120,6 +120,134 @@
       "price": "Rs. 2599",
       "image": "images/b557a2d95b9d4feebd9bde27c6fb9716.png",
       "category": "Bracelets"
+    },
+    {
+      "name": "Stainless Steel Watch",
+      "sku": "SSW-001",
+      "description": "Rugged 42mm case, sapphire crystal, 100m water resistant.",
+      "price": "$249.00",
+      "image": "",
+      "category": "Other"
+    },
+    {
+      "name": "Leather Wallet",
+      "sku": "LW-002",
+      "description": "Genuine full-grain leather, RFID blocking, 6 card slots.",
+      "price": "$65.00",
+      "image": "",
+      "category": "Other"
+    },
+    {
+      "name": "Slim Keychain",
+      "sku": "SK-003",
+      "description": "Brushed aluminum, laser-etched logo, split ring included.",
+      "price": "$18.00",
+      "image": "",
+      "category": "Other"
+    },
+    {
+      "name": "Sunglasses",
+      "sku": "SG-004",
+      "description": "Polarized UV400 lenses, acetate frame, comes with hard case.",
+      "price": "$120.00",
+      "image": "",
+      "category": "Other"
+    },
+    {
+      "name": "Test",
+      "sku": "RY300",
+      "description": "Cuban link chain silver, multi color",
+      "price": "Rs. 39090",
+      "image": "images/cf3746b06f804a6ea5e61b56136f9640.png",
+      "category": "Other"
+    },
+    {
+      "name": "100 dollor silver necklace",
+      "sku": "RY381",
+      "description": "Anti Tarnish & stainless steel",
+      "price": "Rs. 2399",
+      "image": "images/e947219fc6334dcb80868107987cc1ef.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Black and white beads bracelet",
+      "sku": "RY385",
+      "description": "Bold statement piece",
+      "price": "Rs. 1999",
+      "image": "images/8d9baf6723ba41e7829fe1ac2abc6a19.png",
+      "category": "Bracelets"
+    },
+    {
+      "name": "Sport Style Wing Pendant Necklace",
+      "sku": "RY365",
+      "description": "Stainless Steel & Anti Tarnish",
+      "price": "Rs. 2199",
+      "image": "images/ef50f3c3c09240598ff51191fa662ff1.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Square Linked chain",
+      "sku": "RY356",
+      "description": "Stainless steel & Anti tarnish",
+      "price": "Rs. 2399",
+      "image": "images/1bf3899aa2d94521ac7259a5b6e6b300.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Golden Goku Necklace",
+      "sku": "RY392",
+      "description": "Stainless steel & Anti Tarnish",
+      "price": "Rs. 1999",
+      "image": "images/3f5e91861a2341acb9eaa87b3c4a6dc3.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Good luck pendent",
+      "sku": "RY364",
+      "description": "Stainless Steel & Anti Tarnish",
+      "price": "Rs. 2199",
+      "image": "images/b320e085a2994fc99924620c2f89896d.png",
+      "category": "Other"
+    },
+    {
+      "name": "Marijuana Lead Pendant",
+      "sku": "RY399",
+      "description": "Stainless Steel & Anti Tarnish",
+      "price": "Rs. 1999",
+      "image": "images/4c1f45047dfd427d8f8527f3871093e8.png",
+      "category": "Other"
+    },
+    {
+      "name": "Fire Pose Goku, Necklace",
+      "sku": "RY391",
+      "description": "Stainless steel & Anti Tarnish",
+      "price": "Rs. 1999",
+      "image": "images/b08d7ba1956e4d1f9987c6ef98905202.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Basketball Pendant & Cuban Chain",
+      "sku": "RY359",
+      "description": "Stainless Steel & Anti Tarnish",
+      "price": "Rs. 3899",
+      "image": "images/0279c8f89a9d4d7ab61b7ec4be56356b.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Emerald Cuban Chain Small Square Necklace",
+      "sku": "RY360",
+      "description": "Stainless Steel & Anti Tarnish",
+      "price": "Rs. 4299",
+      "image": "images/73f66c31610b48348b1bf4d255a44b67.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Hip Hop style Heart shaped Bracelet",
+      "sku": "RY355",
+      "description": "Stainless Steel & Anti Tarnish",
+      "price": "Rs. 2999",
+      "image": "images/129ea36252474a13bea779c54f1dcfee.png",
+      "category": "Bracelets"
     }
   ]
 }
