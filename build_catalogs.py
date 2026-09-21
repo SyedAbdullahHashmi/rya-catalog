@@ -43,13 +43,13 @@ SECTION_BG    = "#f5e6c8"   # slightly lighter beige for section header area
 
 
 def ryra_css():
-    return f"""
+    return """
         * {{ box-sizing: border-box; margin: 0; padding: 0; }}
 
         body {{
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            color: {TEXT};
-            background: {BG};
+            color: {text};
+            background: {bg};
             padding: 0;
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
@@ -61,13 +61,12 @@ def ryra_css():
             padding: 0 32px 40px;
         }}
 
-        /* ---- top brand strip (RYRA & CO. wordmark) ---- */
         .brand-strip {{
             display: flex;
             justify-content: space-between;
             align-items: flex-end;
             padding: 18px 0 14px;
-            border-bottom: 1.5px solid {GOLD};
+            border-bottom: 1.5px solid {gold};
             margin-bottom: 24px;
         }}
         .brand-mark {{
@@ -78,7 +77,7 @@ def ryra_css():
         .brand-icon {{
             width: 20px;
             height: 20px;
-            border: 2px solid {GOLD};
+            border: 2px solid {gold};
             border-radius: 50%;
             position: relative;
             flex-shrink: 0;
@@ -90,7 +89,7 @@ def ryra_css():
             left: 50%;
             width: 7px;
             height: 7px;
-            background: {GOLD};
+            background: {gold};
             border-radius: 50%;
             transform: translate(-50%, -50%);
         }}
@@ -99,16 +98,15 @@ def ryra_css():
             font-weight: 700;
             letter-spacing: 0.25em;
             text-transform: uppercase;
-            color: {TEXT};
+            color: {text};
         }}
         .brand-contact {{
             font-size: 0.7rem;
-            color: {TEXT_SECONDARY};
+            color: {text2};
             text-align: right;
             line-height: 1.4;
         }}
 
-        /* ---- section header ---- */
         .section-header {{
             margin-bottom: 24px;
             padding-bottom: 16px;
@@ -117,7 +115,7 @@ def ryra_css():
             font-family: Georgia, "Times New Roman", serif;
             font-size: 2rem;
             font-weight: 700;
-            color: {TEXT};
+            color: {text};
             letter-spacing: -0.01em;
             margin-bottom: 4px;
             line-height: 1.15;
@@ -125,28 +123,27 @@ def ryra_css():
         .section-sub {{
             font-size: 0.75rem;
             font-weight: 600;
-            color: {GOLD};
+            color: {gold};
             letter-spacing: 0.12em;
             text-transform: uppercase;
         }}
 
-        /* ---- category bar ---- */
         .category-bar {{
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
             margin-bottom: 24px;
             padding-bottom: 16px;
-            border-bottom: 1px solid {BORDER_LIGHT};
+            border-bottom: 1px solid {borderlight};
         }}
         .category-btn {{
             font-size: 0.75rem;
             font-weight: 600;
             letter-spacing: 0.03em;
             text-transform: uppercase;
-            color: {TEXT};
-            background: {CARD_BG};
-            border: 1px solid {BORDER};
+            color: {text};
+            background: {cardbg};
+            border: 1px solid {border};
             border-radius: 20px;
             padding: 6px 14px;
             cursor: pointer;
@@ -155,33 +152,32 @@ def ryra_css():
             display: inline-block;
         }}
         .category-btn:hover {{
-            background: {TEXT};
-            color: {CARD_BG};
-            border-color: {TEXT};
+            background: {text};
+            color: {cardbg};
+            border-color: {text};
         }}
         .category-btn.active {{
-            background: {TEXT};
-            color: {CARD_BG};
-            border-color: {TEXT};
+            background: {text};
+            color: {cardbg};
+            border-color: {text};
         }}
         .category-count {{
-            font-weight: 400;
-            opacity: 0.65;
+            display: inline-block;
             margin-left: 4px;
-            font-size: 0.65rem;
+            font-size: 0.68rem;
+            color: {cardbg};
+            font-weight: 600;
         }}
 
-        /* ---- product grid ---- */
         .grid {{
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px 20px;
+            gap: 14px;
         }}
 
-        /* ---- product card ---- */
         .product-card {{
-            background: {CARD_BG};
-            border: 1px solid {BORDER};
+            background: {cardbg};
+            border: 1px solid {border};
             border-radius: 1px;
             overflow: hidden;
             display: flex;
@@ -191,14 +187,14 @@ def ryra_css():
             scroll-margin-top: 20px;
         }}
         .card-image {{
-            background: {WHITE};
+            background: {white};
             width: 100%;
             height: 320px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            border-bottom: 1px solid {BORDER};
+            border-bottom: 1px solid {border};
             cursor: zoom-in;
         }}
         .product-image {{
@@ -214,12 +210,12 @@ def ryra_css():
         }}
         .product-image-placeholder {{
             font-size: 2.2rem;
-            color: {BORDER};
+            color: {border};
             font-weight: 300;
         }}
         .product-image-missing {{
             font-size: 0.7rem;
-            color: {BORDER};
+            color: {border};
             padding: 10px;
             text-align: center;
         }}
@@ -230,7 +226,7 @@ def ryra_css():
         .card-category {{
             font-size: 0.65rem;
             font-weight: 600;
-            color: {TEXT_SECONDARY};
+            color: {text2};
             text-transform: uppercase;
             letter-spacing: 0.08em;
             margin-bottom: 3px;
@@ -239,7 +235,7 @@ def ryra_css():
             font-family: Georgia, "Times New Roman", serif;
             font-size: 0.92rem;
             font-weight: 400;
-            color: {TEXT_MUTED};
+            color: {textmuted};
             margin-bottom: 5px;
             line-height: 1.35;
             white-space: pre-wrap;
@@ -248,12 +244,12 @@ def ryra_css():
         .card-price {{
             font-size: 0.88rem;
             font-weight: 700;
-            color: {TEXT};
+            color: {text};
             letter-spacing: 0.02em;
             white-space: nowrap;
         }}
         .card-price-oos {{
-            color: {TEXT_SECONDARY};
+            color: {text2};
             text-decoration: line-through;
             font-weight: 400;
         }}
@@ -279,7 +275,9 @@ def ryra_css():
             text-transform: uppercase;
             color: #1a1a1a;
             background: #f5c518;
+            border-radius: 3px;
         }}
+
         .product-card-oos .card-image {{
             opacity: 0.6;
         }}
@@ -288,16 +286,16 @@ def ryra_css():
             grid-column: 1 / -1;
             text-align: center;
             padding: 56px 20px;
-            color: {TEXT_SECONDARY};
+            color: {text2};
             font-size: 0.85rem;
         }}
 
         .catalog-footer {{
             margin-top: 36px;
             padding-top: 14px;
-            border-top: 1px solid {BORDER};
+            border-top: 1px solid {border};
             font-size: 0.68rem;
-            color: {TEXT_SECONDARY};
+            color: {text2};
             text-align: center;
             letter-spacing: 0.08em;
             text-transform: uppercase;
@@ -320,7 +318,7 @@ def ryra_css():
             .page {{ padding: 0 14px 24px; }}
         }}
         @media print {{
-            body {{ background: {WHITE}; }}
+            body {{ background: {white}; }}
             .page {{ max-width: 100%; padding: 20px; }}
             .product-card {{
                 box-shadow: none;
@@ -333,10 +331,13 @@ def ryra_css():
             .catalog-footer {{ border-top: 1px solid #bbb; }}
             .category-bar {{ display: none; }}
             .section-title {{ font-size: 1.4rem; }}
-            .section-sub {{ color: {TEXT}; }}
+            .section-sub {{ color: {text}; }}
         }}
-    """
-
+    """.format(
+        text=TEXT, bg=BG, gold=GOLD, text2=TEXT_SECONDARY,
+        border=BORDER, borderlight=BORDER_LIGHT, cardbg=CARD_BG,
+        white=WHITE, textmuted=TEXT_MUTED
+    )
 
 def build_one(catalog_name, json_path, output_path):
     with open(json_path, "r", encoding="utf-8") as f:
@@ -383,13 +384,21 @@ def build_one(catalog_name, json_path, output_path):
         tags = p.get("tags") or []
         oos = "out_of_stock" in tags
         bs = "best_seller" in tags
+        # Parse numeric price for filtering
+        price_raw = (p.get("price") or "").strip()
+        price_num = 0
+        if price_raw.startswith("Rs."):
+            try:
+                price_num = int(price_raw[3:].replace(",", "").strip())
+            except ValueError:
+                price_num = 0
         cards.append(f"""
-        <div class="product-card{' product-card-oos' if oos else ''}" data-category="{html.escape(category.lower().replace(' ', '-'))}">
+        <div class="product-card{' product-card-oos' if oos else ''}" data-category="{html.escape(category.lower().replace(' ', '-'))}" data-price="{price_num}">
             <div class="card-image">{img_tag}</div>
             <div class="card-body">
                 <div class="card-category">{html.escape(category)}</div>
                 <div class="card-name">{html.escape(name)}</div>
-                <div class="card-price{' card-price-oos' if oos else ''}">{html.escape(price)}</div>
+                <div class="card-price{' card-price-oos' if oos else ''}">{html.escape(price_raw)}</div>
                 {f'<div class="oos-badge">Out of Stock</div>' if oos else ''}
                 {f'<div class="bs-badge">★ Best Seller</div>' if bs else ''}
             </div>
@@ -444,6 +453,17 @@ def build_one(catalog_name, json_path, output_path):
             {cat_buttons_html}
         </div>
 
+        <div class="price-filter-bar">
+            <div class="price-filter-label">Price:</div>
+            <div class="price-filter-inputs">
+                <input type="number" class="price-from" placeholder="From" min="0" step="100">
+                <span class="price-separator">—</span>
+                <input type="number" class="price-to" placeholder="To" min="0" step="100">
+            </div>
+            <button class="price-filter-clear" title="Clear filter">✕</button>
+            <div class="price-filter-count" id="price-filter-count"></div>
+        </div>
+
         <div class="grid" id="product-grid">
             {cards_html}
         </div>
@@ -485,6 +505,43 @@ def build_one(catalog_name, json_path, output_path):
                 btns.forEach(function(b) {{ b.classList.remove('active'); }});
                 btn.classList.add('active');
             }});
+        }});
+
+        // ---- Price filter ----
+        var priceFrom = document.querySelector('.price-from');
+        var priceTo = document.querySelector('.price-to');
+        var priceClear = document.querySelector('.price-filter-clear');
+        var priceCount = document.getElementById('price-filter-count');
+        var allCards = grid.querySelectorAll('.product-card');
+        var totalCards = allCards.length;
+
+        function applyPriceFilter() {{
+            var from = parseInt(priceFrom.value, 10);
+            var to = parseInt(priceTo.value, 10);
+            var fromValid = !isNaN(from) && from >= 0;
+            var toValid = !isNaN(to) && to >= 0;
+
+            var visible = 0;
+            allCards.forEach(function(c) {{
+                var p = parseInt(c.getAttribute('data-price'), 10) || 0;
+                var show = true;
+                if (fromValid && p < from) show = false;
+                if (toValid && p > to) show = false;
+                c.style.display = show ? '' : 'none';
+                if (show) visible++;
+            }});
+
+            if (priceCount) {{
+                priceCount.textContent = visible + ' of ' + totalCards + ' shown';
+            }}
+        }}
+
+        priceFrom.addEventListener('input', applyPriceFilter);
+        priceTo.addEventListener('input', applyPriceFilter);
+        priceClear.addEventListener('click', function() {{
+            priceFrom.value = '';
+            priceTo.value = '';
+            applyPriceFilter();
         }});
     }})();
     </script>
