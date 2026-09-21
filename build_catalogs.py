@@ -270,6 +270,17 @@ def ryra_css():
             background: #c62828;
             border-radius: 3px;
         }}
+        .bs-badge {{
+            display: inline-block;
+            margin-top: 5px;
+            padding: 2px 8px;
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            background: #f5c518;
+        }}
         .product-card-oos .card-image {{
             opacity: 0.6;
         }}
@@ -371,6 +382,7 @@ def build_one(catalog_name, json_path, output_path):
             img_tag = '<div class="product-image-placeholder">+</div>'
 
         oos = bool(p.get("out_of_stock"))
+        bs = bool(p.get("best_seller"))
         cards.append(f"""
         <div class="product-card{' product-card-oos' if oos else ''}" data-category="{html.escape(category.lower().replace(' ', '-'))}">
             <div class="card-image">{img_tag}</div>
@@ -379,6 +391,7 @@ def build_one(catalog_name, json_path, output_path):
                 <div class="card-name">{html.escape(name)}</div>
                 <div class="card-price{' card-price-oos' if oos else ''}">{html.escape(price)}</div>
                 {f'<div class="oos-badge">Out of Stock</div>' if oos else ''}
+                {f'<div class="bs-badge">★ Best Seller</div>' if bs else ''}
             </div>
         </div>
         """)

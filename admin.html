@@ -167,17 +167,26 @@
                 for (let i = 0; i < cat.products.length; i++) {
                     const p = cat.products[i];
                     const oos = !!p.out_of_stock;
+                    const bs = !!p.best_seller;
                     html += '<tr data-catalog="' + esc(cat.key) + '" data-idx="' + i + '">' +
                         '<td class="product-name">' + esc(p.name) + '</td>' +
                         '<td class="product-sku">' + esc(p.sku) + '</td>' +
                         '<td class="product-price">' + esc(p.price) + '</td>' +
                         '<td class="product-desc" title="' + esc(p.description) + '">' + esc(p.description) + '</td>' +
                         '<td class="product-cat">' + esc(p.category || 'Other') + '</td>' +
-                        '<td><span class="stock-badge ' + (oos ? 'stock-out' : 'stock-in') + '">' + (oos ? 'OUT OF STOCK' : 'In Stock') + '</span></td>' +
+                        '<td>' +
+                            (bs
+                                ? '<span class="tag-badge tag-best-seller">BEST SELLER</span>'
+                                : '') +
+                            (oos
+                                ? '<span class="tag-badge tag-oos">OUT OF STOCK</span>'
+                                : '') +
+                        '</td>' +
                         '<td class="actions" style="text-align:right;">' +
                         '<button class="btn btn-edit" data-edit>Edit</button> ' +
                         '<button class="btn btn-del" data-delete>Delete</button> ' +
-                        '<button class="btn ' + (oos ? 'btn-stock stock-out-btn' : 'btn-stock') + '" data-stock>' + (oos ? 'Unflag' : 'OOS') + '</button>' +
+                        '<button class="btn ' + (oos ? 'btn-stock stock-out-btn' : 'btn-stock') + ' btn-tag" data-tag="oos">' + (oos ? 'Unflag OOS' : 'Flag OOS') + '</button> ' +
+                        '<button class="btn ' + (bs ? 'btn-tag tag-active' : 'btn btn-tag') + '" data-tag="bs">' + (bs ? 'Unflag Best Seller' : 'Flag Best Seller') + '</button>' +
                         '</td></tr>';
                 }
                 html += '</tbody></table></div>';
@@ -203,7 +212,13 @@
             bodyEl.querySelectorAll('[data-stock]').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const tr = e.currentTarget.closest('tr');
-                    toggleStock(tr);
+                    toggleTag(tr, 'oos');
+                });
+            });
+            bodyEl.querySelectorAll('[data-tag]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const tr = e.currentTarget.closest('tr');
+                    toggleTag(tr, e.currentTarget.dataset.tag);
                 });
             });
         }
@@ -230,7 +245,10 @@
                 '<td><input name="price" value="' + esc(price) + '"></td>' +
                 '<td><input name="description" value="' + esc(desc) + '"></td>' +
                 '<td><select name="category">' + catOptions(cat) + '</select></td>' +
-                '<td><span class="stock-badge ' + (pOOS(tr) ? 'stock-out' : 'stock-in') + '">' + (pOOS(tr) ? 'OUT OF STOCK' : 'In Stock') + '</span></td>' +
+                '<td>' +
+                    '<label><input type="checkbox" name="best_seller" ' + (bsFromTr(tr) ? 'checked' : '') + '> Best Seller</label> ' +
+                    '<label><input type="checkbox" name="out_of_stock" ' + (oosFromTr(tr) ? 'checked' : '') + '> Out of Stock</label>' +
+                '</td>' +
                 '<td class="actions" style="text-align:right;">' +
                 '<button class="btn btn-save" data-save>Save</button> ' +
                 '<button class="btn btn-cancel" data-cancel>Cancel</button></td>';
@@ -249,8 +267,10 @@
             return cats.map(c => '<option value="' + esc(c) + '"' + (c === selected ? ' selected' : '') + '>' + esc(c || '— Select —') + '</option>').join('');
         }
 
-        function pOOS(tr) {
-            // peek at original row data via dataset
+        function bsFromTr(tr) {
+            return !!tr.dataset.bs;
+        }
+        function oosFromTr(tr) {
             return !!tr.dataset.oos;
         }
 
@@ -269,13 +289,14 @@
             if (!price) { showStatus('Price is required.', 'err'); return; }
 
             showStatus('Saving…', 'ok', true);
-            const oos = tr.dataset.oos === 'true';
+            const bs = inputs[4].checked;
+            const oos = inputs[5].checked;
 
             try {
                 const res = await fetch('/admin/edit', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ catalog, idx, name, sku: skuFromTr(tr), price, description: desc, category, out_of_stock: oos })
+                    body: JSON.stringify({ catalog, idx, name, sku: skuFromTr(tr), price, description: desc, category, out_of_stock: oos, best_seller: bs })
                 });
                 const j = await res.json();
                 if (!res.ok) throw new Error(j.error || 'Save failed');
@@ -314,22 +335,26 @@
             }
         }
 
-        async function toggleStock(tr) {
+        async function toggleTag(tr, tag) {
             const catalog = tr.dataset.catalog;
             const idx = parseInt(tr.dataset.idx, 10);
             const name = tr.querySelector('.product-name')?.textContent.trim() || '(unknown)';
-            const currentlyOOS = tr.dataset.oos === 'true';
 
-            showStatus((currentlyOOS ? 'Unflagging' : 'Marking out of stock') + ' ' + name + '…', 'ok', true);
+            const isOOS = tag === 'oos';
+            const currently = isOOS ? (tr.dataset.oos === 'true') : (tr.dataset.bs === 'true');
+            const label = isOOS ? 'Out of Stock' : 'Best Seller';
+            const action = currently ? 'Unflagging' : 'Flagging';
+
+            showStatus(action + ' ' + label + ' for ' + name + '…', 'ok', true);
             try {
-                const res = await fetch('/admin/toggle-stock', {
+                const res = await fetch('/admin/toggle-tag', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ catalog, idx })
+                    body: JSON.stringify({ catalog, idx, tag: isOOS ? 'out_of_stock' : 'best_seller' })
                 });
                 const j = await res.json();
                 if (!res.ok) throw new Error(j.error || 'Toggle failed');
-                showStatus((currentlyOOS ? 'Back in stock' : 'Marked out of stock') + ' — publishing to GitHub…', 'ok');
+                showStatus((currently ? 'Removed' : 'Added') + ' ' + label + ' — publishing to GitHub…', 'ok');
                 hideStatus();
                 setTimeout(loadCatalogs, 1200);
             } catch (err) {
@@ -337,13 +362,14 @@
             }
         }
 
-        // Store OOS state on tr dataset for edit mode
+        // Store OOS and BS state on tr dataset for edit mode
         document.addEventListener('click', (e) => {
             const tr = e.target.closest('tr[data-catalog]');
             if (!tr) return;
-            // populate dataset.oos from the stock badge text
-            const badge = tr.querySelector('.stock-badge');
-            if (badge) tr.dataset.oos = badge.classList.contains('stock-out') ? 'true' : 'false';
+            // populate dataset from tag badges
+            const badges = tr.querySelectorAll('.tag-badge');
+            tr.dataset.oos = Array.from(badges).some(b => b.classList.contains('tag-oos')) ? 'true' : 'false';
+            tr.dataset.bs = Array.from(badges).some(b => b.classList.contains('tag-best-seller')) ? 'true' : 'false';
         });
 
         loadCatalogs();

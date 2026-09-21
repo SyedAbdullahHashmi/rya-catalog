@@ -114,6 +114,8 @@ class Handler(BaseHTTPRequestHandler):
             self._admin_delete()
         elif self.path == "/admin/toggle-stock":
             self._admin_toggle_stock()
+        elif self.path == "/admin/toggle-tag":
+            self._admin_toggle_tag()
         elif self.path != "/add":
             self.send_error(404)
             return
@@ -162,6 +164,8 @@ class Handler(BaseHTTPRequestHandler):
             "price": price,
             "image": image,
             "category": category,
+            "out_of_stock": False,
+            "best_seller": False,
         })
         write_catalog(CATALOGS[catalog_key], cat)
 
@@ -259,6 +263,7 @@ class Handler(BaseHTTPRequestHandler):
                         "image": p.get("image", ""),
                         "category": p.get("category", ""),
                         "out_of_stock": bool(p.get("out_of_stock")),
+                        "best_seller": bool(p.get("best_seller")),
                     }
                     for p in cat.get("products", [])
                 ],
@@ -292,6 +297,8 @@ class Handler(BaseHTTPRequestHandler):
             p["price"] = "Rs. " + p["price"]
         p["description"] = (data.get("description") or "").strip()
         p["category"] = (data.get("category") or "Other").strip() or "Other"
+        p["out_of_stock"] = bool(data.get("out_of_stock", p.get("out_of_stock", False)))
+        p["best_seller"] = bool(data.get("best_seller", p.get("best_seller", False)))
         # SKU is not editable from admin (preserve original)
         write_catalog(CATALOGS[catalog_key], cat)
         try:
@@ -361,6 +368,54 @@ class Handler(BaseHTTPRequestHandler):
             "ok": True,
             "name": p.get("name", ""),
             "out_of_stock": p["out_of_stock"],
+        })
+
+    def _admin_toggle_tag(self):
+        try:
+            data = json.loads(self.rfile.read(int(self.headers.get("Content-Length", 0))))
+        except Exception:
+            self.send_json({"error": "Invalid JSON"}, 400)
+            return
+        catalog_key = (data.get("catalog") or "").strip()
+        if catalog_key not in CATALOGS:
+            self.send_json({"error": "Unknown catalog"}, 400)
+            return
+        try:
+            idx = int(data.get("idx"))
+        except (TypeError, ValueError):
+            self.send_json({"error": "Invalid idx"}, 400)
+            return
+        tag = (data.get("tag") or "").strip()
+        if tag not in ("out_of_stock", "best_seller"):
+            self.send_json({"error": "Invalid tag. Use 'out_of_stock' or 'best_seller'."}, 400)
+            return
+        cat = read_catalog(CATALOGS[catalog_key])
+        products = cat.get("products", [])
+        if idx < 0 or idx >= len(products):
+            self.send_json({"error": "Product index out of range"}, 400)
+            return
+        p = products[idx]
+        tags = p.get("tags") or []
+        if tag in tags:
+            tags.remove(tag)
+        else:
+            tags.append(tag)
+        p["tags"] = tags
+        # Keep backward-compatible boolean fields in sync
+        p["out_of_stock"] = "out_of_stock" in tags
+        p["best_seller"] = "best_seller" in tags
+        write_catalog(CATALOGS[catalog_key], cat)
+        try:
+            field = "out of stock" if tag == "out_of_stock" else "best seller"
+            action = "removed" if tag in (tags if tag == "out_of_stock" else p.get("tags", [])) else "added"
+            _auto_publish(catalog_key, message=f"Toggle {field} {action} in {catalog_key}: {p['name']}")
+        except Exception as e:
+            sys.stderr.write(f"admin-toggle-tag auto-publish failed: {e}\n")
+        self.send_json({
+            "ok": True,
+            "name": p.get("name", ""),
+            "out_of_stock": p["out_of_stock"],
+            "best_seller": p["best_seller"],
         })
 
 
