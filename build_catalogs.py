@@ -24,6 +24,7 @@ os.makedirs(OUT_DIR, exist_ok=True)
 
 CATALOG_FILES = [
     ("mens_jewelry",      "catalog_mens_jewelry.html"),
+    ("womens_jewelry",    "catalog_womens_jewelry.html"),
     ("mens_accessories",  "catalog_mens_accessories.html"),
 ]
 
