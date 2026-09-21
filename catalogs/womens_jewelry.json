@@ -87,7 +87,7 @@
       "description": "18K Gold Plated",
       "price": "Rs. 1999",
       "image": "images/3db1b200682b473c8e3ea9797eaafeaa.png",
-      "category": "Gold Plated"
+      "category": "Other"
     },
     {
       "name": "Gold Hoop Earrings",
@@ -103,7 +103,7 @@
       "description": "Stainless steel, Anti tarnish",
       "price": "Rs. 1499",
       "image": "images/f568e78103b4433fb82f37e573b8def7.png",
-      "category": "Stainless Steel"
+      "category": "Other"
     },
     {
       "name": "Classy Crystal Style Necklace",
@@ -151,7 +151,7 @@
       "description": "18K Gold Plated",
       "price": "R%s. 2199",
       "image": "images/8b6d03c9ca2945c1baa2ff648fad4c62.png",
-      "category": "Gold Plated"
+      "category": "Other"
     },
     {
       "name": "Luxury Blue Crystal Whale Pendant Necklace",
@@ -255,7 +255,7 @@
       "description": "Bestsellers",
       "price": "Rs. 1199",
       "image": "images/983b601b97d0440db455b92a66b1639d.jpg",
-      "category": "Other"
+      "category": "Best Sellers"
     },
     {
       "name": "Cherry Drop Earrings",
