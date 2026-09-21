@@ -26,6 +26,7 @@ CATALOG_FILES = [
     ("mens_jewelry",      "catalog_mens_jewelry.html"),
     ("womens_jewelry",    "catalog_womens_jewelry.html"),
     ("mens_accessories",  "catalog_mens_accessories.html"),
+    ("womens_clutches",   "catalog_womens_clutches.html"),
 ]
 
 # RYRA & CO. PDF-reference colour palette

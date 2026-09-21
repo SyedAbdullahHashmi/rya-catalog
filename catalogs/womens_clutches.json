@@ -8,6 +8,54 @@
       "price": "Rs. 95.00",
       "image": "",
       "category": "Bags & Clutches"
+    },
+    {
+      "name": "Orb Wooden Clutch",
+      "sku": "RY487",
+      "description": "Handcrafted",
+      "price": "Rs. 6999",
+      "image": "images/0131b43367a3463f95a292a575d486eb.webp",
+      "category": "Clutches"
+    },
+    {
+      "name": "Curvy Wooden Clutch | Brass Latch",
+      "sku": "RY488",
+      "description": "Handcrafted",
+      "price": "Rs. 5999",
+      "image": "images/1eacbb26ab904d3f81db8170f323cc80.webp",
+      "category": "Clutches"
+    },
+    {
+      "name": "Signature Inlay Resin Clutch | Brass Handle",
+      "sku": "RY344",
+      "description": "Handcrafted",
+      "price": "Rs. 5499",
+      "image": "images/39eb669f2078448494b8191351456955.webp",
+      "category": "Clutches"
+    },
+    {
+      "name": "Triangle Wooden Clutch",
+      "sku": "RY489",
+      "description": "Handcrafted",
+      "price": "Rs. 7299",
+      "image": "images/81496167571b438faace3da4bd9e4bf9.webp",
+      "category": "Clutches"
+    },
+    {
+      "name": "Wooden Mesh Clutch",
+      "sku": "RY490",
+      "description": "Handcrafted",
+      "price": "Rs. 5999",
+      "image": "images/6730d4d3ddbe487792dad96036db658e.webp",
+      "category": "Clutches"
+    },
+    {
+      "name": "Wooden Flat Capsule Clutch | Brass Handle",
+      "sku": "RY491",
+      "description": "Handcrafted",
+      "price": "Rs. 5569",
+      "image": "images/af209b82823940de95fed9ec7b18a29d.webp",
+      "category": "Clutches"
     }
   ]
 }

@@ -87,7 +87,7 @@
       "description": "18K Gold Plated",
       "price": "Rs. 1999",
       "image": "images/3db1b200682b473c8e3ea9797eaafeaa.png",
-      "category": "Other"
+      "category": "Gold Plated"
     },
     {
       "name": "Gold Hoop Earrings",
@@ -103,7 +103,7 @@
       "description": "Stainless steel, Anti tarnish",
       "price": "Rs. 1499",
       "image": "images/f568e78103b4433fb82f37e573b8def7.png",
-      "category": "Other"
+      "category": "Stainless Steel"
     },
     {
       "name": "Classy Crystal Style Necklace",
@@ -151,7 +151,7 @@
       "description": "18K Gold Plated",
       "price": "R%s. 2199",
       "image": "images/8b6d03c9ca2945c1baa2ff648fad4c62.png",
-      "category": "Other"
+      "category": "Gold Plated"
     },
     {
       "name": "Luxury Blue Crystal Whale Pendant Necklace",
@@ -167,7 +167,7 @@
       "description": "Silver 925",
       "price": "Rs. 3499",
       "image": "images/945c9cceca784afe94fc4eade65dd1ee.png",
-      "category": "Other"
+      "category": "925 Silver"
     },
     {
       "name": "The Moon Disc",
@@ -175,7 +175,7 @@
       "description": "Silver 925",
       "price": "Rs. 3299",
       "image": "images/7ec4ed8bcc48435180cf393cba3ecefc.png",
-      "category": "Other"
+      "category": "925 Silver"
     },
     {
       "name": "The Golden Oyester",
@@ -183,7 +183,7 @@
       "description": "Silver 925",
       "price": "Rs. 3399",
       "image": "images/49874e6898034318891be15336a37e58.png",
-      "category": "Other"
+      "category": "925 Silver"
     },
     {
       "name": "Wing of Gold",
@@ -191,7 +191,7 @@
       "description": "Silver 925",
       "price": "Rs. 3449",
       "image": "images/10e39d3dbcb6438a941512dbb43bfddb.png",
-      "category": "Other"
+      "category": "925 Silver"
     },
     {
       "name": "The Ivy Drop",
@@ -199,7 +199,7 @@
       "description": "Silver 925",
       "price": "Rs. 2999",
       "image": "images/ccc1292367974278a483956c62ac7c9f.png",
-      "category": "Other"
+      "category": "925 Silver"
     },
     {
       "name": "The Sweetheart Sterling Necklace",
@@ -248,6 +248,62 @@
       "price": "Rs. 6199",
       "image": "images/e5b59528c8c446aaa0c9d2e8a92c03f5.png",
       "category": "Necklaces"
+    },
+    {
+      "name": "Blue Crystal Peacock Earrings",
+      "sku": "RY486",
+      "description": "Bestsellers",
+      "price": "Rs. 1199",
+      "image": "images/983b601b97d0440db455b92a66b1639d.jpg",
+      "category": "Other"
+    },
+    {
+      "name": "Cherry Drop Earrings",
+      "sku": "RY485",
+      "description": "Bestseller",
+      "price": "Rs. 1199",
+      "image": "images/b0327775913c445faa046e8b945e4034.jpg",
+      "category": "Best Sellers"
+    },
+    {
+      "name": "Premium Sea Shell Design Korean Earrings",
+      "sku": "RY484",
+      "description": "Korean style Bestseller",
+      "price": "Rs. 1199",
+      "image": "images/c318a408e6a84778ac76f6ccbdd00107.jpg",
+      "category": "Best Sellers"
+    },
+    {
+      "name": "Dual Tone Blue Leaf Earrings",
+      "sku": "RY483",
+      "description": "Korean Style, Bestseller",
+      "price": "Rs. 1199",
+      "image": "images/1ec0505b41fb487c9d18ee7ac2ebd3a6.jpg",
+      "category": "Best Sellers"
+    },
+    {
+      "name": "Red Square Crystal Drop Earrings",
+      "sku": "RY482",
+      "description": "Korean Style, Bestseller",
+      "price": "Rs. 1199",
+      "image": "images/4c0779e5ef6042b9be1b6a3755f1622a.jpg",
+      "category": "Best Sellers"
+    },
+    {
+      "name": "Geometric Hook Earrings for Women",
+      "sku": "RY481",
+      "description": "Korean Style, Bestseller",
+      "price": "Rs. 1199",
+      "image": "images/0b81c1b8013842e2921d43d5825121ef.jpg",
+      "category": "Best Sellers"
+    },
+    {
+      "name": "Purple Crystal Hook Earrings",
+      "sku": "RY480",
+      "description": "Korean Style, Bestseller",
+      "price": "Rs. 1199",
+      "image": "images/4ea24f706b2e4a518745658b6129d12c.jpg",
+      "category": "Best Sellers"
     }
   ]
 }

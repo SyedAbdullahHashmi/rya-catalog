@@ -208,6 +208,46 @@
       "price": "Rs. 2999",
       "image": "images/129ea36252474a13bea779c54f1dcfee.png",
       "category": "Bracelets"
+    },
+    {
+      "name": "Stainless Steel Watch",
+      "sku": "SSW-001",
+      "description": "Rugged 42mm case, sapphire crystal, 100m water resistant.",
+      "price": "$249.00",
+      "image": "",
+      "category": "Watches"
+    },
+    {
+      "name": "Leather Wallet",
+      "sku": "LW-002",
+      "description": "Genuine full-grain leather, RFID blocking, 6 card slots.",
+      "price": "$65.00",
+      "image": "",
+      "category": "Accessories"
+    },
+    {
+      "name": "Slim Keychain",
+      "sku": "SK-003",
+      "description": "Brushed aluminum, laser-etched logo, split ring included.",
+      "price": "$18.00",
+      "image": "",
+      "category": "Accessories"
+    },
+    {
+      "name": "Sunglasses",
+      "sku": "SG-004",
+      "description": "Polarized UV400 lenses, acetate frame, comes with hard case.",
+      "price": "$120.00",
+      "image": "",
+      "category": "Eyewear"
+    },
+    {
+      "name": "Test",
+      "sku": "RY300",
+      "description": "Cuban link chain silver, multi color",
+      "price": "Rs. 39090",
+      "image": "images/cf3746b06f804a6ea5e61b56136f9640.png",
+      "category": "Other"
     }
   ]
 }
