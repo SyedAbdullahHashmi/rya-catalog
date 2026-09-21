@@ -23,7 +23,6 @@
             padding: 0 32px 40px;
         }
 
-        /* ---- top brand strip (RYRA & CO. wordmark) ---- */
         .brand-strip {
             display: flex;
             justify-content: space-between;
@@ -70,7 +69,6 @@
             line-height: 1.4;
         }
 
-        /* ---- section header ---- */
         .section-header {
             margin-bottom: 24px;
             padding-bottom: 16px;
@@ -92,7 +90,6 @@
             text-transform: uppercase;
         }
 
-        /* ---- category bar ---- */
         .category-bar {
             display: flex;
             flex-wrap: wrap;
@@ -127,20 +124,19 @@
             border-color: #2f2115;
         }
         .category-count {
-            font-weight: 400;
-            opacity: 0.65;
+            display: inline-block;
             margin-left: 4px;
-            font-size: 0.65rem;
+            font-size: 0.68rem;
+            color: #fdf2de;
+            font-weight: 600;
         }
 
-        /* ---- product grid ---- */
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px 20px;
+            gap: 14px;
         }
 
-        /* ---- product card ---- */
         .product-card {
             background: #fdf2de;
             border: 1px solid #c9b896;
@@ -241,7 +237,9 @@
             text-transform: uppercase;
             color: #1a1a1a;
             background: #f5c518;
+            border-radius: 3px;
         }
+
         .product-card-oos .card-image {
             opacity: 0.6;
         }
@@ -326,9 +324,20 @@
             <a class="category-btn" href="#category-925-silver">925 Silver<span class="category-count">5</span></a>
         </div>
 
+        <div class="price-filter-bar">
+            <div class="price-filter-label">Price:</div>
+            <div class="price-filter-inputs">
+                <input type="number" class="price-from" placeholder="From" min="0" step="100">
+                <span class="price-separator">—</span>
+                <input type="number" class="price-to" placeholder="To" min="0" step="100">
+            </div>
+            <button class="price-filter-clear" title="Clear filter">✕</button>
+            <div class="price-filter-count" id="price-filter-count"></div>
+        </div>
+
         <div class="grid" id="product-grid">
             
-        <div class="product-card" data-category="rings">
+        <div class="product-card" data-category="rings" data-price="999">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_1_cdfd08.png" alt="7 Layers Ring"></div>
             <div class="card-body">
                 <div class="card-category">Rings</div>
@@ -340,7 +349,7 @@
         </div>
         
 
-        <div class="product-card" data-category="bracelets">
+        <div class="product-card" data-category="bracelets" data-price="2199">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_2_a29be7.png" alt="Pink Enamel Bracelet"></div>
             <div class="card-body">
                 <div class="card-category">Bracelets</div>
@@ -352,7 +361,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1999">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_3_9d050b.png" alt="Solitaire Hoop"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -364,7 +373,7 @@
         </div>
         
 
-        <div class="product-card" data-category="rings">
+        <div class="product-card" data-category="rings" data-price="999">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_4_c66c29.png" alt="The Leaves ring"></div>
             <div class="card-body">
                 <div class="card-category">Rings</div>
@@ -376,7 +385,7 @@
         </div>
         
 
-        <div class="product-card" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="2399">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_5_54e29b.png" alt="The Swan Necklace"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
@@ -388,7 +397,7 @@
         </div>
         
 
-        <div class="product-card" data-category="bracelets">
+        <div class="product-card" data-category="bracelets" data-price="2199">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_6_cb979a.png" alt="Tulip bracelet Golden"></div>
             <div class="card-body">
                 <div class="card-category">Bracelets</div>
@@ -400,7 +409,7 @@
         </div>
         
 
-        <div class="product-card" data-category="bracelets">
+        <div class="product-card" data-category="bracelets" data-price="2199">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_7_0f4ba6.png" alt="Tulip Bracelet Silver"></div>
             <div class="card-body">
                 <div class="card-category">Bracelets</div>
@@ -412,7 +421,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1999">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_8_3b0f67.png" alt="The Heart Hoop"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -424,19 +433,19 @@
         </div>
         
 
-        <div class="product-card product-card-oos" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="2699">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_9_2aeef4.png" alt="Leaf Antlers Necklace"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
                 <div class="card-name">Leaf Antlers Necklace</div>
-                <div class="card-price card-price-oos">Rs. 2699</div>
-                <div class="oos-badge">Out of Stock</div>
+                <div class="card-price">Rs. 2699</div>
+                
                 <div class="bs-badge">★ Best Seller</div>
             </div>
         </div>
         
 
-        <div class="product-card" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="2299">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_10_c22a15.png" alt="Floating Pink Tulip Necklace"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
@@ -448,19 +457,19 @@
         </div>
         
 
-        <div class="product-card product-card-oos" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="1999">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_11_c0d1e9.png" alt="Crystal Charm"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
                 <div class="card-name">Crystal Charm</div>
-                <div class="card-price card-price-oos">Rs. 1999</div>
-                <div class="oos-badge">Out of Stock</div>
+                <div class="card-price">Rs. 1999</div>
+                
                 <div class="bs-badge">★ Best Seller</div>
             </div>
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1799">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_12_36081f.png" alt="Gold Hoop Earrings"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -472,7 +481,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1499">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_13_c8d2a4.png" alt="Gold Textured Style Earrings"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -484,19 +493,19 @@
         </div>
         
 
-        <div class="product-card product-card-oos" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="2399">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_14_a538b8.png" alt="Classy Crystal Style Necklace"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
                 <div class="card-name">Classy Crystal Style Necklace</div>
-                <div class="card-price card-price-oos">Rs. 2399</div>
-                <div class="oos-badge">Out of Stock</div>
+                <div class="card-price">Rs. 2399</div>
+                
                 <div class="bs-badge">★ Best Seller</div>
             </div>
         </div>
         
 
-        <div class="product-card" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="2399">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_15_a35b27.png" alt="Rotating flower Necklace"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
@@ -508,7 +517,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1799">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_16_bf0a63.png" alt="Contemproray Swirl Stud"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -520,7 +529,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1999">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_17_cca24b.png" alt="Round Stone Stud Earrings"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -532,7 +541,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1799">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_18_9ed8f9.png" alt="Butterfly Pearl Stud"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -544,7 +553,7 @@
         </div>
         
 
-        <div class="product-card" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="0">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_19_5456d9.png" alt="Minimal Heart &amp; Beads Chain"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
@@ -556,79 +565,79 @@
         </div>
         
 
-        <div class="product-card product-card-oos" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="2899">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_20_6e9d96.jpg" alt="Luxury Blue Crystal Whale Pendant Necklace"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
                 <div class="card-name">Luxury Blue Crystal Whale Pendant Necklace</div>
-                <div class="card-price card-price-oos">Rs. 2899</div>
-                <div class="oos-badge">Out of Stock</div>
+                <div class="card-price">Rs. 2899</div>
+                
                 <div class="bs-badge">★ Best Seller</div>
             </div>
         </div>
         
 
-        <div class="product-card product-card-oos" data-category="925-silver">
+        <div class="product-card" data-category="925-silver" data-price="3499">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_21_aef67c.png" alt="The Royal Ruby"></div>
             <div class="card-body">
                 <div class="card-category">925 Silver</div>
                 <div class="card-name">The Royal Ruby</div>
-                <div class="card-price card-price-oos">Rs. 3499</div>
-                <div class="oos-badge">Out of Stock</div>
+                <div class="card-price">Rs. 3499</div>
+                
                 
             </div>
         </div>
         
 
-        <div class="product-card product-card-oos" data-category="925-silver">
+        <div class="product-card" data-category="925-silver" data-price="3299">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_22_137989.png" alt="The Moon Disc"></div>
             <div class="card-body">
                 <div class="card-category">925 Silver</div>
                 <div class="card-name">The Moon Disc</div>
-                <div class="card-price card-price-oos">Rs. 3299</div>
-                <div class="oos-badge">Out of Stock</div>
+                <div class="card-price">Rs. 3299</div>
+                
                 
             </div>
         </div>
         
 
-        <div class="product-card product-card-oos" data-category="925-silver">
+        <div class="product-card" data-category="925-silver" data-price="3399">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_23_61150a.png" alt="The Golden Oyester"></div>
             <div class="card-body">
                 <div class="card-category">925 Silver</div>
                 <div class="card-name">The Golden Oyester</div>
-                <div class="card-price card-price-oos">Rs. 3399</div>
-                <div class="oos-badge">Out of Stock</div>
+                <div class="card-price">Rs. 3399</div>
+                
                 
             </div>
         </div>
         
 
-        <div class="product-card product-card-oos" data-category="925-silver">
+        <div class="product-card" data-category="925-silver" data-price="3449">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_24_538559.png" alt="Wing of Gold"></div>
             <div class="card-body">
                 <div class="card-category">925 Silver</div>
                 <div class="card-name">Wing of Gold</div>
-                <div class="card-price card-price-oos">Rs. 3449</div>
-                <div class="oos-badge">Out of Stock</div>
+                <div class="card-price">Rs. 3449</div>
+                
                 
             </div>
         </div>
         
 
-        <div class="product-card product-card-oos" data-category="925-silver">
+        <div class="product-card" data-category="925-silver" data-price="2999">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_25_0f0684.png" alt="The Ivy Drop"></div>
             <div class="card-body">
                 <div class="card-category">925 Silver</div>
                 <div class="card-name">The Ivy Drop</div>
-                <div class="card-price card-price-oos">Rs. 2999</div>
-                <div class="oos-badge">Out of Stock</div>
+                <div class="card-price">Rs. 2999</div>
+                
                 <div class="bs-badge">★ Best Seller</div>
             </div>
         </div>
         
 
-        <div class="product-card" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="4999">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_26_ff973b.png" alt="The Sweetheart Sterling Necklace"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
@@ -640,7 +649,7 @@
         </div>
         
 
-        <div class="product-card" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="5599">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_27_7dd338.png" alt="North Star Pendant"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
@@ -652,7 +661,7 @@
         </div>
         
 
-        <div class="product-card" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="5999">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_28_58606e.png" alt="The Eternal Twist Necklace"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
@@ -664,7 +673,7 @@
         </div>
         
 
-        <div class="product-card" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="5999">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_29_230ce0.png" alt="Three Wishes Necklace"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
@@ -676,7 +685,7 @@
         </div>
         
 
-        <div class="product-card" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="5299">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_30_2e5dd2.png" alt="The Kaleidoscope Necklace"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
@@ -688,7 +697,7 @@
         </div>
         
 
-        <div class="product-card" data-category="necklaces">
+        <div class="product-card" data-category="necklaces" data-price="6199">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_31_69d41d.png" alt="The Dutches Necklace"></div>
             <div class="card-body">
                 <div class="card-category">Necklaces</div>
@@ -700,7 +709,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1199">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_32_b9108c.jpg" alt="Blue Crystal Peacock Earrings"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -712,7 +721,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1199">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_33_72d4f8.jpg" alt="Cherry Drop Earrings"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -724,7 +733,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1199">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_34_bfe5ed.jpg" alt="Premium Sea Shell Design Korean Earrings"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -736,7 +745,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1199">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_35_7a3743.jpg" alt="Dual Tone Blue Leaf Earrings"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -748,7 +757,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1199">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_36_6e2e52.jpg" alt="Red Square Crystal Drop Earrings"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -760,7 +769,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1199">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_37_7cf9e4.jpg" alt="Geometric Hook Earrings for Women"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -772,7 +781,7 @@
         </div>
         
 
-        <div class="product-card" data-category="earrings">
+        <div class="product-card" data-category="earrings" data-price="1199">
             <div class="card-image"><img class="product-image" src="images/womens_jewelry_38_512514.jpg" alt="Purple Crystal Hook Earrings"></div>
             <div class="card-body">
                 <div class="card-category">Earrings</div>
@@ -822,6 +831,43 @@
                 btns.forEach(function(b) { b.classList.remove('active'); });
                 btn.classList.add('active');
             });
+        });
+
+        // ---- Price filter ----
+        var priceFrom = document.querySelector('.price-from');
+        var priceTo = document.querySelector('.price-to');
+        var priceClear = document.querySelector('.price-filter-clear');
+        var priceCount = document.getElementById('price-filter-count');
+        var allCards = grid.querySelectorAll('.product-card');
+        var totalCards = allCards.length;
+
+        function applyPriceFilter() {
+            var from = parseInt(priceFrom.value, 10);
+            var to = parseInt(priceTo.value, 10);
+            var fromValid = !isNaN(from) && from >= 0;
+            var toValid = !isNaN(to) && to >= 0;
+
+            var visible = 0;
+            allCards.forEach(function(c) {
+                var p = parseInt(c.getAttribute('data-price'), 10) || 0;
+                var show = true;
+                if (fromValid && p < from) show = false;
+                if (toValid && p > to) show = false;
+                c.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            if (priceCount) {
+                priceCount.textContent = visible + ' of ' + totalCards + ' shown';
+            }
+        }
+
+        priceFrom.addEventListener('input', applyPriceFilter);
+        priceTo.addEventListener('input', applyPriceFilter);
+        priceClear.addEventListener('click', function() {
+            priceFrom.value = '';
+            priceTo.value = '';
+            applyPriceFilter();
         });
     })();
     </script>

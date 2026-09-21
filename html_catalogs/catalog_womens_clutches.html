@@ -23,7 +23,6 @@
             padding: 0 32px 40px;
         }
 
-        /* ---- top brand strip (RYRA & CO. wordmark) ---- */
         .brand-strip {
             display: flex;
             justify-content: space-between;
@@ -70,7 +69,6 @@
             line-height: 1.4;
         }
 
-        /* ---- section header ---- */
         .section-header {
             margin-bottom: 24px;
             padding-bottom: 16px;
@@ -92,7 +90,6 @@
             text-transform: uppercase;
         }
 
-        /* ---- category bar ---- */
         .category-bar {
             display: flex;
             flex-wrap: wrap;
@@ -127,20 +124,19 @@
             border-color: #2f2115;
         }
         .category-count {
-            font-weight: 400;
-            opacity: 0.65;
+            display: inline-block;
             margin-left: 4px;
-            font-size: 0.65rem;
+            font-size: 0.68rem;
+            color: #fdf2de;
+            font-weight: 600;
         }
 
-        /* ---- product grid ---- */
         .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 18px 20px;
+            gap: 14px;
         }
 
-        /* ---- product card ---- */
         .product-card {
             background: #fdf2de;
             border: 1px solid #c9b896;
@@ -241,7 +237,9 @@
             text-transform: uppercase;
             color: #1a1a1a;
             background: #f5c518;
+            border-radius: 3px;
         }
+
         .product-card-oos .card-image {
             opacity: 0.6;
         }
@@ -322,9 +320,20 @@
             <a class="category-btn" href="#category-clutches">Clutches<span class="category-count">6</span></a>
         </div>
 
+        <div class="price-filter-bar">
+            <div class="price-filter-label">Price:</div>
+            <div class="price-filter-inputs">
+                <input type="number" class="price-from" placeholder="From" min="0" step="100">
+                <span class="price-separator">—</span>
+                <input type="number" class="price-to" placeholder="To" min="0" step="100">
+            </div>
+            <button class="price-filter-clear" title="Clear filter">✕</button>
+            <div class="price-filter-count" id="price-filter-count"></div>
+        </div>
+
         <div class="grid" id="product-grid">
             
-        <div class="product-card" data-category="clutches">
+        <div class="product-card" data-category="clutches" data-price="6999">
             <div class="card-image"><img class="product-image" src="images/womens_clutches_1_4c2035.webp" alt="Orb Wooden Clutch"></div>
             <div class="card-body">
                 <div class="card-category">Clutches</div>
@@ -336,7 +345,7 @@
         </div>
         
 
-        <div class="product-card" data-category="clutches">
+        <div class="product-card" data-category="clutches" data-price="5999">
             <div class="card-image"><img class="product-image" src="images/womens_clutches_2_11313f.webp" alt="Curvy Wooden Clutch | Brass Latch"></div>
             <div class="card-body">
                 <div class="card-category">Clutches</div>
@@ -348,7 +357,7 @@
         </div>
         
 
-        <div class="product-card" data-category="clutches">
+        <div class="product-card" data-category="clutches" data-price="5499">
             <div class="card-image"><img class="product-image" src="images/womens_clutches_3_931ccd.webp" alt="Signature Inlay Resin Clutch | Brass Handle"></div>
             <div class="card-body">
                 <div class="card-category">Clutches</div>
@@ -360,7 +369,7 @@
         </div>
         
 
-        <div class="product-card" data-category="clutches">
+        <div class="product-card" data-category="clutches" data-price="7299">
             <div class="card-image"><img class="product-image" src="images/womens_clutches_4_c6a9fb.webp" alt="Triangle Wooden Clutch"></div>
             <div class="card-body">
                 <div class="card-category">Clutches</div>
@@ -372,7 +381,7 @@
         </div>
         
 
-        <div class="product-card" data-category="clutches">
+        <div class="product-card" data-category="clutches" data-price="5999">
             <div class="card-image"><img class="product-image" src="images/womens_clutches_5_9bbf3c.webp" alt="Wooden Mesh Clutch"></div>
             <div class="card-body">
                 <div class="card-category">Clutches</div>
@@ -384,7 +393,7 @@
         </div>
         
 
-        <div class="product-card" data-category="clutches">
+        <div class="product-card" data-category="clutches" data-price="5569">
             <div class="card-image"><img class="product-image" src="images/womens_clutches_6_9742e7.webp" alt="Wooden Flat Capsule Clutch | Brass Handle"></div>
             <div class="card-body">
                 <div class="card-category">Clutches</div>
@@ -434,6 +443,43 @@
                 btns.forEach(function(b) { b.classList.remove('active'); });
                 btn.classList.add('active');
             });
+        });
+
+        // ---- Price filter ----
+        var priceFrom = document.querySelector('.price-from');
+        var priceTo = document.querySelector('.price-to');
+        var priceClear = document.querySelector('.price-filter-clear');
+        var priceCount = document.getElementById('price-filter-count');
+        var allCards = grid.querySelectorAll('.product-card');
+        var totalCards = allCards.length;
+
+        function applyPriceFilter() {
+            var from = parseInt(priceFrom.value, 10);
+            var to = parseInt(priceTo.value, 10);
+            var fromValid = !isNaN(from) && from >= 0;
+            var toValid = !isNaN(to) && to >= 0;
+
+            var visible = 0;
+            allCards.forEach(function(c) {
+                var p = parseInt(c.getAttribute('data-price'), 10) || 0;
+                var show = true;
+                if (fromValid && p < from) show = false;
+                if (toValid && p > to) show = false;
+                c.style.display = show ? '' : 'none';
+                if (show) visible++;
+            });
+
+            if (priceCount) {
+                priceCount.textContent = visible + ' of ' + totalCards + ' shown';
+            }
+        }
+
+        priceFrom.addEventListener('input', applyPriceFilter);
+        priceTo.addEventListener('input', applyPriceFilter);
+        priceClear.addEventListener('click', function() {
+            priceFrom.value = '';
+            priceTo.value = '';
+            applyPriceFilter();
         });
     })();
     </script>
