@@ -244,6 +244,92 @@
             opacity: 0.6;
         }
 
+        /* ---- price slider ---- */
+        .price-filter-bar {
+            margin-bottom: 20px;
+            padding: 12px 16px;
+            background: #ffffff;
+            border: 1px solid #c9b896;
+            border-radius: 6px;
+        }
+        .price-filter-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .price-filter-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #4a3720;
+            white-space: nowrap;
+        }
+        .price-slider-wrap {
+            flex: 1;
+            position: relative;
+            height: 28px;
+            display: flex;
+            align-items: center;
+        }
+        .price-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 4px;
+            background: #e0ceaa;
+            border-radius: 2px;
+            outline: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+        .price-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            background: #d5ac55;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+            transition: transform 0.1s ease;
+        }
+        .price-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.15);
+        }
+        .price-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            background: #d5ac55;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .price-slider::-moz-range-track {
+            height: 4px;
+            background: #e0ceaa;
+            border-radius: 2px;
+        }
+        .price-filter-value {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #2f2115;
+            white-space: nowrap;
+            min-width: 70px;
+            text-align: right;
+        }
+        .price-filter-count {
+            font-size: 0.72rem;
+            color: #4a3720;
+            margin-left: auto;
+        }
+
         .empty-state {
             grid-column: 1 / -1;
             text-align: center;
@@ -325,13 +411,14 @@
         </div>
 
         <div class="price-filter-bar">
-            <div class="price-filter-label">Price:</div>
-            <div class="price-filter-inputs">
-                <input type="number" class="price-from" placeholder="From" min="0" step="100">
-                <span class="price-separator">—</span>
-                <input type="number" class="price-to" placeholder="To" min="0" step="100">
+            <div class="price-filter-row">
+                <span class="price-filter-label">Price:</span>
+                <div class="price-slider-wrap">
+                    <input type="range" class="price-slider" id="price-slider" min="0" max="5000" step="100" value="0">
+                    <div class="price-slider-track"></div>
+                </div>
+                <span class="price-filter-value" id="price-filter-value">Rs. 0</span>
             </div>
-            <button class="price-filter-clear" title="Clear filter">✕</button>
             <div class="price-filter-count" id="price-filter-count"></div>
         </div>
 
@@ -833,26 +920,21 @@
             });
         });
 
-        // ---- Price filter ----
-        var priceFrom = document.querySelector('.price-from');
-        var priceTo = document.querySelector('.price-to');
-        var priceClear = document.querySelector('.price-filter-clear');
+        // ---- Price slider filter ----
+        var slider = document.getElementById('price-slider');
+        var sliderValue = document.getElementById('price-filter-value');
         var priceCount = document.getElementById('price-filter-count');
         var allCards = grid.querySelectorAll('.product-card');
         var totalCards = allCards.length;
 
         function applyPriceFilter() {
-            var from = parseInt(priceFrom.value, 10);
-            var to = parseInt(priceTo.value, 10);
-            var fromValid = !isNaN(from) && from >= 0;
-            var toValid = !isNaN(to) && to >= 0;
+            var minPrice = parseInt(slider.value, 10) || 0;
+            sliderValue.textContent = 'Rs. ' + minPrice;
 
             var visible = 0;
             allCards.forEach(function(c) {
                 var p = parseInt(c.getAttribute('data-price'), 10) || 0;
-                var show = true;
-                if (fromValid && p < from) show = false;
-                if (toValid && p > to) show = false;
+                var show = p >= minPrice;
                 c.style.display = show ? '' : 'none';
                 if (show) visible++;
             });
@@ -862,13 +944,7 @@
             }
         }
 
-        priceFrom.addEventListener('input', applyPriceFilter);
-        priceTo.addEventListener('input', applyPriceFilter);
-        priceClear.addEventListener('click', function() {
-            priceFrom.value = '';
-            priceTo.value = '';
-            applyPriceFilter();
-        });
+        slider.addEventListener('input', applyPriceFilter);
     })();
     </script>
 </body>
