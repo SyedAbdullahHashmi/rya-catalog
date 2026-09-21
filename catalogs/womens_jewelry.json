@@ -25,7 +25,6 @@
       "image": "images/4cb4edf163d944c1aa31b175bcda9a48.png",
       "category": "Earrings",
       "tags": [
-        "out_of_stock",
         "best_seller"
       ]
     },
@@ -69,7 +68,6 @@
       "image": "images/89c8ce4ac63043429aba11dd6da3459e.png",
       "category": "Earrings",
       "tags": [
-        "out_of_stock",
         "best_seller"
       ]
     },
@@ -113,7 +111,6 @@
       "image": "images/a86f09716a4e4c6890bd1bbba6267235.png",
       "category": "Earrings",
       "tags": [
-        "out_of_stock",
         "best_seller"
       ]
     },
@@ -153,7 +150,6 @@
       "image": "images/62073c34ae5f430dbc7b3b5887ef6637.png",
       "category": "Earrings",
       "tags": [
-        "out_of_stock",
         "best_seller"
       ]
     },
@@ -165,7 +161,6 @@
       "image": "images/657fb59a1af8416d8b34e56eda52b171.png",
       "category": "Earrings",
       "tags": [
-        "out_of_stock",
         "best_seller"
       ]
     },
@@ -177,7 +172,6 @@
       "image": "images/660c8b542fd542cfa9a881ee5f69624f.png",
       "category": "Earrings",
       "tags": [
-        "out_of_stock",
         "best_seller"
       ]
     },
@@ -311,9 +305,9 @@
       "description": "Bestsellers",
       "price": "Rs. 1199",
       "image": "images/983b601b97d0440db455b92a66b1639d.jpg",
-      "category": "Best Sellers",
+      "category": "Earrings",
       "tags": [
-        "out_of_stock"
+        "best_seller"
       ]
     },
     {
@@ -322,9 +316,9 @@
       "description": "Bestseller",
       "price": "Rs. 1199",
       "image": "images/b0327775913c445faa046e8b945e4034.jpg",
-      "category": "Best Sellers",
+      "category": "Earrings",
       "tags": [
-        "out_of_stock"
+        "best_seller"
       ]
     },
     {
@@ -333,9 +327,9 @@
       "description": "Korean style Bestseller",
       "price": "Rs. 1199",
       "image": "images/c318a408e6a84778ac76f6ccbdd00107.jpg",
-      "category": "Best Sellers",
+      "category": "Earrings",
       "tags": [
-        "out_of_stock"
+        "best_seller"
       ]
     },
     {
@@ -344,9 +338,9 @@
       "description": "Korean Style, Bestseller",
       "price": "Rs. 1199",
       "image": "images/1ec0505b41fb487c9d18ee7ac2ebd3a6.jpg",
-      "category": "Best Sellers",
+      "category": "Earrings",
       "tags": [
-        "out_of_stock"
+        "best_seller"
       ]
     },
     {
@@ -355,9 +349,9 @@
       "description": "Korean Style, Bestseller",
       "price": "Rs. 1199",
       "image": "images/4c0779e5ef6042b9be1b6a3755f1622a.jpg",
-      "category": "Best Sellers",
+      "category": "Earrings",
       "tags": [
-        "out_of_stock"
+        "best_seller"
       ]
     },
     {
@@ -366,9 +360,9 @@
       "description": "Korean Style, Bestseller",
       "price": "Rs. 1199",
       "image": "images/0b81c1b8013842e2921d43d5825121ef.jpg",
-      "category": "Best Sellers",
+      "category": "Earrings",
       "tags": [
-        "out_of_stock"
+        "best_seller"
       ]
     },
     {
@@ -377,9 +371,9 @@
       "description": "Korean Style, Bestseller",
       "price": "Rs. 1199",
       "image": "images/4ea24f706b2e4a518745658b6129d12c.jpg",
-      "category": "Best Sellers",
+      "category": "Earrings",
       "tags": [
-        "out_of_stock"
+        "best_seller"
       ]
     }
   ]
