@@ -2,14 +2,6 @@
   "name": "Women's Clutches",
   "products": [
     {
-      "name": "Metallic Evening Bag",
-      "sku": "MEB-002",
-      "description": "Holographic silver finish, chain strap, snap button closure.",
-      "price": "Rs. 95.00",
-      "image": "",
-      "category": "Clutches"
-    },
-    {
       "name": "Orb Wooden Clutch",
       "sku": "RY487",
       "description": "Handcrafted",
