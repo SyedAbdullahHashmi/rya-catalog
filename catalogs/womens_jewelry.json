@@ -79,7 +79,6 @@
       "image": "images/4670866df7b54c988f6df814e8015a5e.png",
       "category": "Necklaces",
       "tags": [
-        "out_of_stock",
         "best_seller"
       ]
     },
@@ -99,7 +98,6 @@
       "image": "images/3db1b200682b473c8e3ea9797eaafeaa.png",
       "category": "Necklaces",
       "tags": [
-        "out_of_stock",
         "best_seller"
       ]
     },
@@ -130,7 +128,6 @@
       "image": "images/51121d89b27642abacb53261e1ba97a6.png",
       "category": "Necklaces",
       "tags": [
-        "out_of_stock",
         "best_seller"
       ]
     },
@@ -191,7 +188,6 @@
       "image": "images/c4c07a5376c547bda2a43bf107e7f532.jpg",
       "category": "Necklaces",
       "tags": [
-        "out_of_stock",
         "best_seller"
       ]
     },
@@ -202,9 +198,7 @@
       "price": "Rs. 3499",
       "image": "images/945c9cceca784afe94fc4eade65dd1ee.png",
       "category": "925 Silver",
-      "tags": [
-        "out_of_stock"
-      ]
+      "tags": []
     },
     {
       "name": "The Moon Disc",
@@ -213,9 +207,7 @@
       "price": "Rs. 3299",
       "image": "images/7ec4ed8bcc48435180cf393cba3ecefc.png",
       "category": "925 Silver",
-      "tags": [
-        "out_of_stock"
-      ]
+      "tags": []
     },
     {
       "name": "The Golden Oyester",
@@ -224,9 +216,7 @@
       "price": "Rs. 3399",
       "image": "images/49874e6898034318891be15336a37e58.png",
       "category": "925 Silver",
-      "tags": [
-        "out_of_stock"
-      ]
+      "tags": []
     },
     {
       "name": "Wing of Gold",
@@ -235,9 +225,7 @@
       "price": "Rs. 3449",
       "image": "images/10e39d3dbcb6438a941512dbb43bfddb.png",
       "category": "925 Silver",
-      "tags": [
-        "out_of_stock"
-      ]
+      "tags": []
     },
     {
       "name": "The Ivy Drop",
@@ -247,7 +235,6 @@
       "image": "images/ccc1292367974278a483956c62ac7c9f.png",
       "category": "925 Silver",
       "tags": [
-        "out_of_stock",
         "best_seller"
       ]
     },

@@ -52,9 +52,7 @@
       "price": "Rs. 999",
       "image": "images/a57360d0d1ab4e158a8a862d3cd690d9.png",
       "category": "Earrings",
-      "tags": [
-        "out_of_stock"
-      ]
+      "tags": []
     },
     {
       "name": "Black Panther Head Hoop Earrings",
@@ -74,9 +72,7 @@
       "price": "Rs. 3999",
       "image": "images/db95c3719e0944da96739a2ef22a1396.png",
       "category": "Necklaces",
-      "tags": [
-        "out_of_stock"
-      ]
+      "tags": []
     },
     {
       "name": "Black Beaded Cuban Link Chain",
@@ -96,9 +92,7 @@
       "price": "Rs. 899",
       "image": "images/2899baa232d144648c4f2a7b2157fd05.png",
       "category": "Rings",
-      "tags": [
-        "out_of_stock"
-      ]
+      "tags": []
     },
     {
       "name": "Black Onyx Rectangular Statement Ring",
@@ -151,9 +145,7 @@
       "price": "Rs. 4999",
       "image": "images/728dae4f548d448b90db61a62ee97ef3.png",
       "category": "Necklaces",
-      "tags": [
-        "out_of_stock"
-      ]
+      "tags": []
     },
     {
       "name": "Silver Crystal Link Bracelet",
@@ -173,9 +165,7 @@
       "price": "Rs. 2399",
       "image": "images/e947219fc6334dcb80868107987cc1ef.png",
       "category": "Necklaces",
-      "tags": [
-        "out_of_stock"
-      ]
+      "tags": []
     },
     {
       "name": "Black and white beads bracelet",
