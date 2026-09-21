@@ -2,14 +2,6 @@
   "name": "Women's Jewelry & Accessories",
   "products": [
     {
-      "name": "Pearl Necklace",
-      "sku": "PN-002",
-      "description": "8mm freshwater pearls on silk ribbon, adjustable clasp.",
-      "price": "Rs. 89.00",
-      "image": "",
-      "category": "Necklaces"
-    },
-    {
       "name": "7 Layers Ring",
       "sku": "RY477",
       "description": "18K Gold Plated",
