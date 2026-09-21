@@ -224,14 +224,6 @@
       "price": "$120.00",
       "image": "",
       "category": "Other"
-    },
-    {
-      "name": "Test",
-      "sku": "RY300",
-      "description": "Cuban link chain silver, multi color",
-      "price": "Rs. 39090",
-      "image": "images/cf3746b06f804a6ea5e61b56136f9640.png",
-      "category": "Other"
     }
   ]
 }
