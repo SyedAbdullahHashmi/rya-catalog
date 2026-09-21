@@ -381,8 +381,9 @@ def build_one(catalog_name, json_path, output_path):
         else:
             img_tag = '<div class="product-image-placeholder">+</div>'
 
-        oos = bool(p.get("out_of_stock"))
-        bs = bool(p.get("best_seller"))
+        tags = p.get("tags") or []
+        oos = "out_of_stock" in tags
+        bs = "best_seller" in tags
         cards.append(f"""
         <div class="product-card{' product-card-oos' if oos else ''}" data-category="{html.escape(category.lower().replace(' ', '-'))}">
             <div class="card-image">{img_tag}</div>
