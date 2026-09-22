@@ -198,11 +198,9 @@
       "price": "Rs. 3499",
       "image": "images/945c9cceca784afe94fc4eade65dd1ee.png",
       "category": "925 Silver",
-      "tags": [
-        "best_seller"
-      ],
+      "tags": [],
       "out_of_stock": false,
-      "best_seller": true
+      "best_seller": false
     },
     {
       "name": "The Moon Disc",
