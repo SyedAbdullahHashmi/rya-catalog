@@ -543,7 +543,7 @@ def build_one(catalog_name, json_path, output_path):
             <div class="price-filter-row">
                 <span class="price-filter-label">Price:</span>
                 <div class="price-slider-wrap">
-                    <input type="range" class="price-slider" id="price-slider" min="0" max="5000" step="100" value="0">
+                    <input type="range" class="price-slider" id="price-slider" min="0" max="5000" step="500" value="0">
                     <div class="price-slider-track"></div>
                 </div>
                 <span class="price-filter-value" id="price-filter-value">Rs. 0</span>
