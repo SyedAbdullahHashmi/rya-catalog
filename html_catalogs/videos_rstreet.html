@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RSTREET — Videos</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: #2f2115;
+            background: #edd3a8;
+            padding: 0;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px 40px;
+        }
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+        }
+        .back-link {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #4a3720;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+        }
+        .back-link:hover { color: #d5ac55; }
+        .brand-strip {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 14px 0 14px;
+            border-bottom: 1.5px solid #d5ac55;
+            margin-bottom: 24px;
+        }
+        .brand-mark {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .brand-icon {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d5ac55;
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+        }
+        .brand-icon::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 7px;
+            height: 7px;
+            background: #d5ac55;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .brand-name {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #2f2115;
+        }
+        .section-header { margin-bottom: 24px; }
+        .section-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2f2115;
+            line-height: 1.15;
+            margin-bottom: 4px;
+        }
+        .section-sub {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #d5ac55;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .video-card {
+            background: #fdf2de;
+            border: 1px solid #c9b896;
+            border-radius: 2px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(94, 66, 25, 0.18);
+        }
+        .video-thumb {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            background: #ffffff;
+            overflow: hidden;
+            border-bottom: 1px solid #c9b896;
+        }
+        .video-thumb video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(47, 33, 21, 0.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            transition: background 0.15s;
+        }
+        .video-card:hover .play-overlay { background: rgba(213, 172, 85, 0.9); }
+        .play-overlay::after {
+            content: "";
+            border-style: solid;
+            border-width: 10px 0 10px 16px;
+            border-color: transparent transparent transparent #ffffff;
+            margin-left: 4px;
+        }
+        .card-body { padding: 12px 14px 14px; }
+        .card-title {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 0.95rem;
+            color: #2f2115;
+            margin-bottom: 3px;
+        }
+        .card-meta {
+            font-size: 0.72rem;
+            color: #4a3720;
+            letter-spacing: 0.03em;
+        }
+        .card-file {
+            font-size: 0.62rem;
+            color: #c9b896;
+            font-family: monospace;
+            margin-top: 6px;
+            word-break: break-all;
+        }
+        .empty {
+            grid-column: 1 / -1;
+            background: #fdf2de;
+            border: 1px dashed #c9b896;
+            border-radius: 2px;
+            padding: 48px 24px;
+            text-align: center;
+            color: #4a3720;
+            font-size: 0.9rem;
+        }
+        .empty strong { font-family: Georgia, serif; font-size: 1.2rem; display: block; margin-bottom: 6px; }
+        .footer {
+            margin-top: 36px;
+            padding-top: 14px;
+            border-top: 1px solid #e0ceaa;
+            text-align: center;
+            font-size: 0.72rem;
+            color: #604622;
+        }
+        @media (max-width: 900px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .page { padding: 0 18px 32px; }
+            .section-title { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="topbar">
+            <a class="back-link" href="../index.html">&larr; Back to all catalogs</a>
+            <a class="back-link" href="https://www.instagram.com/rstreetstore" target="_blank" rel="noopener">Instagram &rarr;</a>
+        </div>
+        <div class="brand-strip">
+            <div class="brand-mark">
+                <div class="brand-icon"></div>
+                <div class="brand-name">RSTREET</div>
+            </div>
+            <div class="brand-name">Men&#x27;s Reels</div>
+        </div>
+        <div class="section-header">
+            <h1 class="section-title">Videos</h1>
+            <div class="section-sub">4 reels &middot; tap any reel to open it on Instagram</div>
+        </div>
+        <div class="grid">
+        <a class="video-card" href="https://www.instagram.com/rstreetstore" target="_blank" rel="noopener">
+            <div class="video-thumb">
+                <video src="../videos/rstreet/RSTREET-Collection.mp4" preload="metadata" muted playsinline></video>
+                <div class="play-overlay"></div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">RSTREET Collection</div>
+                <div class="card-meta">2026-10-18 · 22.0 MB · Instagram ↗</div>
+                <div class="card-file">videos/rstreet/RSTREET-Collection.mp4</div>
+            </div>
+        </a>
+        <a class="video-card" href="https://www.instagram.com/rstreetstore" target="_blank" rel="noopener">
+            <div class="video-thumb">
+                <video src="../videos/rstreet/Bracelet-Porsche.mp4" preload="metadata" muted playsinline></video>
+                <div class="play-overlay"></div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">Porsche Bracelet</div>
+                <div class="card-meta">2026-10-18 · 9.7 MB · Instagram ↗</div>
+                <div class="card-file">videos/rstreet/Bracelet-Porsche.mp4</div>
+            </div>
+        </a>
+        <a class="video-card" href="https://www.instagram.com/rstreetstore" target="_blank" rel="noopener">
+            <div class="video-thumb">
+                <video src="../videos/rstreet/Bracelet-Porschenew.mp4" preload="metadata" muted playsinline></video>
+                <div class="play-overlay"></div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">Porsche Bracelet — New</div>
+                <div class="card-meta">2026-10-18 · 12.1 MB · Instagram ↗</div>
+                <div class="card-file">videos/rstreet/Bracelet-Porschenew.mp4</div>
+            </div>
+        </a>
+        <a class="video-card" href="https://www.instagram.com/rstreetstore" target="_blank" rel="noopener">
+            <div class="video-thumb">
+                <video src="../videos/rstreet/Chain-Editorial.mp4" preload="metadata" muted playsinline></video>
+                <div class="play-overlay"></div>
+            </div>
+            <div class="card-body">
+                <div class="card-title">Chain Editorial</div>
+                <div class="card-meta">2026-10-18 · 11.5 MB · Instagram ↗</div>
+                <div class="card-file">videos/rstreet/Chain-Editorial.mp4</div>
+            </div>
+        </a>
+        </div>
+        <div class="footer">RSTREET &middot; videos page</div>
+    </div>
+</body>
+</html>

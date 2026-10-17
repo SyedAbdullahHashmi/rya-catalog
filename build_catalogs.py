@@ -639,6 +639,10 @@ def main():
         build_one(catalog_name, json_path, output_path)
     print(f"\nAll catalogs built into: {OUT_DIR}")
 
+    # Also build the brand video pages (reels grid, Buffer media source)
+    import build_videos
+    build_videos.main()
+
 
 if __name__ == "__main__":
     main()

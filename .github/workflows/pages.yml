@@ -32,6 +32,7 @@ jobs:
           mkdir -p deploy
           cp index.html catalog_form.html deploy/
           cp -r html_catalogs deploy/
+          cp -r videos deploy/ 2>/dev/null || echo "no videos dir yet"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
