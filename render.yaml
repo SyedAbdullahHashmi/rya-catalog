@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: ryra-catalog-admin
+    runtime: python
+    plan: free
+    autoDeploy: false
+    buildCommand: pip install -r hosted/requirements.txt
+    startCommand: gunicorn 'hosted.app:create_app()' --bind 0.0.0.0:$PORT --workers 1 --threads 4 --timeout 180 --access-logfile -
+    healthCheckPath: /healthz
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: GITHUB_REPOSITORY
+        value: SyedAbdullahHashmi/rya-catalog
+      - key: GITHUB_BRANCH
+        value: main
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: STAFF_ACCOUNTS_JSON
+        value: '{}'
