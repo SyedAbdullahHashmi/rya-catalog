@@ -364,6 +364,150 @@
       "tags": [
         "best_seller"
       ]
+    },
+    {
+      "name": "Gemstone Necklace",
+      "sku": "RY519",
+      "description": "18K Gold Plated, Anti Tarnish",
+      "price": "Rs. 2399",
+      "image": "images/5b541796b91a43b38b204aa83514124b.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Star & Crystal Necklace",
+      "sku": "RY519",
+      "description": "18K Gold Plated, Anti Tarnish",
+      "price": "Rs. 1999",
+      "image": "images/1c39fb774fda450c87a512db307179df.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Long Heart Stud",
+      "sku": "RY519",
+      "description": "18K Gold Plated, Anti Tarnish",
+      "price": "Rs. 1299",
+      "image": "images/3f23c93259c248dfbab81d0ca0d63989.png",
+      "category": "Earrings"
+    },
+    {
+      "name": "Tulip Stud Earrings",
+      "sku": "RS519",
+      "description": "18K Gold Plated, Anti Tarnish",
+      "price": "Rs. 1199",
+      "image": "images/c5ea0e638072482a8878a17f224011cc.png",
+      "category": "Earrings"
+    },
+    {
+      "name": "Green Emerald Pendant",
+      "sku": "RY519",
+      "description": "18K Gold Plated, Anti Tarnish",
+      "price": "Rs. 2499",
+      "image": "images/ff9d987e36104facac266e3972a2c335.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Unique Necklace",
+      "sku": "RY519",
+      "description": "18K Gold Plated, Anti Tarnish",
+      "price": "Rs. 1999",
+      "image": "images/2cf625afccd24b77b83312b4daff5b85.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Crown Drop Necklace",
+      "sku": "RY519",
+      "description": "18K Gold Plated, Anti Tarnish",
+      "price": "Rs. 1999",
+      "image": "images/002799bbb1f34af6b2791b6e2e2468ce.png",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Bow Bell Drop",
+      "sku": "RY600",
+      "description": "925 Silver",
+      "price": "Rs. 8199",
+      "image": "images/0096bb9b23b343b89b1eb39a60c9f64b.png",
+      "category": "Earrings"
+    },
+    {
+      "name": "Mini Butterfly Necklace",
+      "sku": "RY600",
+      "description": "925 Silver",
+      "price": "Rs. 7699",
+      "image": "images/b497a50f51d340ccb73d5ab5c3530e36.webp",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Classic Spark Necklace",
+      "sku": "RY600",
+      "description": "Silver 925",
+      "price": "Rs. 8199",
+      "image": "images/807b98b964c345f2a99b9ffdfc1e033f.webp",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Light Pink & Light Green Color Kundan Jewellery",
+      "sku": "RY601",
+      "description": "Bridal Collection",
+      "price": "Rs. 6199",
+      "image": "images/aa92ecebf995425e81003167039814db.webp",
+      "category": "Bridal Collection"
+    },
+    {
+      "name": "Multi Color Kundan Jewellery Set",
+      "sku": "RY601",
+      "description": "Bridal Collcetion",
+      "price": "Rs. 9199",
+      "image": "images/7a33c86b46b14229a48cfc121863deef.webp",
+      "category": "Bridal Collection"
+    },
+    {
+      "name": "Royal Handmade Kundan Jewelry",
+      "sku": "RY601",
+      "description": "Bridal Collcetion",
+      "price": "Rs. 7599",
+      "image": "images/be17f167f9144eb9af0c62cfb39da257.webp",
+      "category": "Bridal Collection"
+    },
+    {
+      "name": "Stylish Ethnic Kundan Set",
+      "sku": "RY601",
+      "description": "Bridal Collection",
+      "price": "Rs. 4599",
+      "image": "images/172d30a8958942ecbda58409c43a4e45.webp",
+      "category": "Bridal Collection"
+    },
+    {
+      "name": "Royal Antique Gold Color Turkish Kundan Necklace Set",
+      "sku": "RY601",
+      "description": "Bridal Collection",
+      "price": "Rs. 5199",
+      "image": "images/890df4132eda4898aab1beb388c6329b.webp",
+      "category": "Bridal Collection"
+    },
+    {
+      "name": "Stunning Royal Rama Green Red Color Turkish Kundan Necklace Set",
+      "sku": "RY601",
+      "description": "Bridal Collcetion",
+      "price": "Rs. 7899",
+      "image": "images/d14daa668a1242b881e6aafe813b11e3.webp",
+      "category": "Bridal Collection"
+    },
+    {
+      "name": "Radiant Multi Color Turkish Kundan Necklace Set",
+      "sku": "RY601",
+      "description": "Bridal Collcetion",
+      "price": "Rs. 6899",
+      "image": "images/c724074ef4d344c79e0e12b80e17264c.webp",
+      "category": "Bridal Collection"
+    },
+    {
+      "name": "Kundan Necklace Set For Traditional Attire",
+      "sku": "RY601",
+      "description": "Bridal Collection",
+      "price": "Rs. 7199",
+      "image": "images/95eaf2312ffb450985c7a925d5ae2906.webp",
+      "category": "Bridal Collection"
     }
   ]
 }

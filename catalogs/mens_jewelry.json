@@ -332,6 +332,46 @@
       "tags": [
         "best_seller"
       ]
+    },
+    {
+      "name": "Scream Mask Necklace",
+      "sku": "RS100",
+      "description": "Anti Tarnish",
+      "price": "Rs. 1999",
+      "image": "images/15af4f9d52564f8da368e2a85dcf7887.webp",
+      "category": "Necklaces"
+    },
+    {
+      "name": "vandal Silver Cuban necklace",
+      "sku": "RS100",
+      "description": "Anti tarnish",
+      "price": "Rs. 3499",
+      "image": "images/73606da7f3864993a8b2aff0c7bcafe0.jpg",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Obsidian Thorn Necklace",
+      "sku": "RS100",
+      "description": "Anti Tarnsih",
+      "price": "Rs. 1499",
+      "image": "images/4f5ea3f22cf74127a212e7af29b3b292.webp",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Reaper Skull Axe Necklace",
+      "sku": "RS100",
+      "description": "Anti Tarnish",
+      "price": "RS100",
+      "image": "images/962f06d4996e4a2d8de23ef7634998fc.webp",
+      "category": "Necklaces"
+    },
+    {
+      "name": "Silver Titan Thin Chain",
+      "sku": "RS100",
+      "description": "Anti Tarnish",
+      "price": "Rs. 1299",
+      "image": "images/7287dee5ecb54a268447ee545529e5e0.jpg",
+      "category": "Necklaces"
     }
   ]
 }
