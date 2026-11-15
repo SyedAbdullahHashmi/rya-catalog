@@ -425,6 +425,64 @@ def ryra_css():
         white=WHITE, textmuted=TEXT_MUTED
     )
 
+def image_viewer():
+    return """
+    <style>
+      .image-zoom { display:block; width:100%; padding:0; border:0; background:transparent; cursor:zoom-in; }
+      .image-zoom:focus-visible { outline:3px solid #604622; outline-offset:-4px; }
+      #image-viewer { inset:0; margin:0; width:100vw; height:100vh; height:100dvh;
+        max-width:none; max-height:none; padding:0; border:0; color:white;
+        background:rgba(15,15,15,.96); }
+      #image-viewer::backdrop { background:rgba(0,0,0,.8); }
+      #image-viewer[open] { display:flex; align-items:center; justify-content:center; }
+      #image-viewer figure { margin:0; width:100%; height:100%; padding:76px 24px 24px;
+        display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; }
+      #viewer-image { display:block; width:auto; height:auto; max-width:100%; max-height:calc(100vh - 160px);
+        max-height:calc(100dvh - 160px); object-fit:contain; }
+      #viewer-caption { text-align:center; font-size:14px; line-height:1.5; }
+      #viewer-close { position:absolute; top:16px; right:16px; min-width:48px; min-height:48px;
+        border:1px solid #aaa; border-radius:50%; background:#222; color:white; font-size:28px; cursor:pointer; }
+      #viewer-original { color:white; font-size:12px; text-underline-offset:4px; }
+      @media print { #image-viewer { display:none !important; } }
+    </style>
+    <dialog id="image-viewer" aria-label="Full-size product photo">
+      <button id="viewer-close" type="button" aria-label="Close full-size photo" autofocus>&times;</button>
+      <figure>
+        <img id="viewer-image" alt="">
+        <figcaption id="viewer-caption"></figcaption>
+        <a id="viewer-original" target="_blank" rel="noopener">Open original image ↗</a>
+      </figure>
+    </dialog>
+    <script>
+    (function() {
+      var viewer = document.getElementById('image-viewer');
+      var photo = document.getElementById('viewer-image');
+      var previousOverflow = '';
+      document.querySelectorAll('.image-zoom').forEach(function(button) {
+        button.addEventListener('click', function() {
+          var image = button.querySelector('img');
+          photo.src = image.currentSrc || image.src;
+          photo.alt = image.alt;
+          document.getElementById('viewer-caption').textContent = image.alt;
+          document.getElementById('viewer-original').href = photo.src;
+          previousOverflow = document.body.style.overflow;
+          viewer.showModal();
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      document.getElementById('viewer-close').addEventListener('click', function() { viewer.close(); });
+      viewer.addEventListener('click', function(event) {
+        if (event.target === viewer || event.target === viewer.querySelector('figure')) viewer.close();
+      });
+      viewer.addEventListener('close', function() {
+        document.body.style.overflow = previousOverflow;
+        photo.removeAttribute('src');
+      });
+    })();
+    </script>
+    """
+
+
 def build_one(catalog_name, json_path, output_path):
     with open(json_path, "r", encoding="utf-8") as f:
         catalog = json.load(f)
@@ -480,7 +538,7 @@ def build_one(catalog_name, json_path, output_path):
                 price_num = 0
         cards.append(f"""
         <div class="product-card{' product-card-oos' if oos else ''}" data-category="{html.escape(category.lower().replace(' ', '-'))}" data-price="{price_num}">
-            <div class="card-image">{img_tag}</div>
+            <div class="card-image">{'<button type="button" class="image-zoom" aria-label="View full-size photo: ' + html.escape(name, quote=True) + '">' + img_tag + '</button>' if img_tag.startswith('<img ') else img_tag}</div>
             <div class="card-body">
                 <div class="card-category">{html.escape(category)}</div>
                 <div class="card-name">{html.escape(name)}</div>
@@ -560,6 +618,7 @@ def build_one(catalog_name, json_path, output_path):
         </footer>
     </div>
 
+    {image_viewer()}
     <script>
     (function() {{
         var bar = document.getElementById('category-bar');
