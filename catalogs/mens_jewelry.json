@@ -359,11 +359,13 @@
     },
     {
       "name": "Reaper Skull Axe Necklace",
-      "sku": "RS100",
+      "sku": "RY100",
       "description": "Anti Tarnish",
-      "price": "RS100",
+      "price": "Rs. 1000",
       "image": "images/962f06d4996e4a2d8de23ef7634998fc.webp",
-      "category": "Necklaces"
+      "category": "Necklaces",
+      "out_of_stock": false,
+      "best_seller": false
     },
     {
       "name": "Silver Titan Thin Chain",
